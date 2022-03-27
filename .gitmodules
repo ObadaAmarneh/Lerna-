@@ -1,0 +1,6 @@
+[submodule "Marketing"]
+	path = Marketing
+	url = git@github.com:agents-on-cloud/Marketing.git
+[submodule "packages/Marketing"]
+	path = packages/Marketing
+	url = git@github.com:agents-on-cloud/Marketing.git
