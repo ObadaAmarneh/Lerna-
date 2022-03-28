@@ -1,3 +1,6 @@
 [submodule "packages/Marketing"]
 	path = packages/Marketing
 	url = https://github.com/agents-on-cloud/Marketing.git
+[submodule "packages/consumer-management"]
+	path = packages/consumer-management
+	url = https://github.com/agents-on-cloud/consumer-management.git
