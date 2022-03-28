@@ -8,20 +8,26 @@
         <v-content>
           <!-- Page Header -->
           <page-header></page-header>
+                  
+
           <div class="page-wrapper">
             <nuxt />
           </div>
+    
           <!-- App Footer -->
           <v-footer height="auto" class="white pa-3 app--footer">
+      
             <span class="caption"
               >Agents On Cloud &copy; {{ new Date().getFullYear() }}</span
             >
             <v-spacer></v-spacer>
+
           </v-footer>
+            
         </v-content>
         <!-- Go to top -->
 
-        <app-fab></app-fab>
+     <TheLayoutToTopFab></TheLayoutToTopFab>
         <!-- theme setting -->
 
         <v-navigation-drawer
@@ -53,15 +59,18 @@
 </template>
 
 <script>
+import TheLayoutToTopFab from '../components/TheLayoutToTopFab.vue'
 import AppDrawer from "../components/AppDrawer.vue";
 import TasksDrawer from "../components/TasksDrawer";
 import AppToolbar from "../components/AppToolbar";
 import AppFab from "../components/AppFab";
 import PageHeader from "../components/PageHeader";
+import {mapActions } from 'vuex';
 import ThemeSettings from "../components/ThemeSettings";
 const { io } = require("socket.io-client");
 export default {
   components: {
+    TheLayoutToTopFab,
     AppDrawer,
     AppToolbar,
     AppFab,
@@ -80,14 +89,20 @@ export default {
   }),
 
   methods: {
+     ...mapActions(["setSingleNotification"]),
     openThemeSettings() {
       this.$vuetify.goTo(0);
       this.rightDrawer = !this.rightDrawer;
     },
   },
   mounted() {
-    // console.log("Socket On");
-    // const socket = io.connect("https://api.notifications.agentsoncloud.com/");
+    console.log("Socket On");
+    const socket = io.connect("https://api.notifications.agentsoncloud.com/",{
+      cors: {
+        origin: "*",
+      },
+      transports : ['websocket']
+    });
     // // socket.on('connection', (connection) => {
     // //   console.log('connected', connection);
     // // })
@@ -96,15 +111,15 @@ export default {
     // //   console.log('createNotification socket', AllNotifications);
     // //   this.setNotification(AllNotifications);
     // // });
-    // console.log("Socket ON");
+    console.log("Socket ON");
     // //UserName here
-    // socket.emit("userConnected", { username: "Agents On Cloud" });
-    // socket.on("addNotification", (notification) => {
-    //   console.log("single notification found", notification);
-    //   console.log("commit");
-    //   this.$store.commit("setNotificationCounter");
-    //   this.setSingleNotification(notification);
-    // });
+    socket.emit("userConnected", { username: "Agents On Cloud" });
+    socket.on("addNotification", (notification) => {
+      console.log("single notification found", notification);
+      console.log("commit");
+      this.$store.commit("setNotificationCounter");
+      this.setSingleNotification(notification);
+    });
   },
 };
 </script>

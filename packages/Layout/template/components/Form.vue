@@ -14,9 +14,10 @@
           <v-icon color="info" dense> mdi-plus </v-icon>
         </v-btn>
       </template>
+    
 
       <v-card>
-        <v-toolbar dark color="blue lighten-1">
+        <v-toolbar dark color="primary">
           <v-btn icon dark @click="dialog = false">
             <v-icon>mdi-close</v-icon>
           </v-btn>

@@ -1,5 +1,4 @@
 <template>
-  <div class="margin">
     
     <v-container class="container--fluid" fluid>
       <v-app-bar
@@ -88,11 +87,12 @@
         </v-form>
       </v-app>
     </v-container>
-  </div>
 </template>
 
 <script>
 export default {
+  layout: 'dashboard',
+
   data: () => ({
     rules: [(v) => v.length <= 255 || "Max 255 characters"],
     value: "",
@@ -101,7 +101,7 @@ export default {
   methods: {},
   computed: {
     singleNotification() {
-      return this.$store.state.selectedNotification;
+      return this.$store.getters.getSelectedNotification;
     },
     hasHistory() {
       return window.history.length > 2;

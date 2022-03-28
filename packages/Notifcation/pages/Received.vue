@@ -1,8 +1,4 @@
 <template>
-  <no-ssr>
-    <div>
-      <v-app>
-        <v-main>
           <v-container class="py-8 px-6" fluid>
             <Navbar></Navbar>
             <v-app-bar
@@ -188,10 +184,7 @@
             </div>
             <TheLayoutToTopFab></TheLayoutToTopFab>
           </v-container>
-        </v-main>
-      </v-app>
-    </div>
-  </no-ssr>
+
 </template>
 <script>
 import Navbar from "../components/Navbar.vue";

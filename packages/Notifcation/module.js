@@ -10,6 +10,9 @@ const pages = [
   "pages/Received",
   "pages/Sent.vue",
   "pages/Trash.vue",
+  "pages/Details.vue",
+  'pages/NotificationActions/Forward.vue',
+  'pages/NotificationActions/Reply.vue',
 ];
 export default function NuxtModule() {
   const { routeNameSplitter, trailingSlash } = this.options.router;
@@ -33,10 +36,5 @@ export default function NuxtModule() {
     });
   });
 
-  this.nuxt.hook("store", (dirs) => {
-    dirs.unshift({
-      path: path.resolve(__dirname, "store"),
-      level: 1, // provide a priority
-    });
-  });
+
 }

@@ -1,9 +1,5 @@
 <template>
-  <no-ssr>
 
-  <div>
-    <v-app>
-      <v-main>
             <v-container class="py-8 px-6" fluid>
 
                 <Navbar/>
@@ -104,13 +100,10 @@
             Open Dialog
           </v-btn>
         </template>
-            </v-container>
-      </v-main>
       <TheLayoutToTopFab></TheLayoutToTopFab>
       <SettingsAlert />
-    </v-app>
-  </div>
-  </no-ssr>
+            </v-container>
+
 </template>
 
 <script>

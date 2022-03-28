@@ -180,7 +180,7 @@ export default {
   },
   computed: {
     singleNotification() {
-      return this.$store.state.selectedNotification;
+      return this.$store.getters.getSelectedNotification;
     },
     getUserSender() {
       return this.singleNotification.users;
@@ -193,7 +193,7 @@ export default {
   mounted() {
     console.log(
       "here???????????????????",
-      this.$store.state.selectedNotification
+      this.$store.getters.getSelectedNotification
     );
   },
 };

@@ -9,6 +9,10 @@
 <script>
     export default {
          layout: "dashboard",
+                   mounted() {
+            this.$router.push('Consumer')
+            console.log('mounted pushed');
+        }
     }
 </script>
 

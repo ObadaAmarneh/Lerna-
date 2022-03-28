@@ -11,7 +11,6 @@
             ></v-progress-linear>
           </template>
           <divider></divider>
-
           <v-list-item>
             <v-list-item-avatar>
               <v-img src="https://cdn.vuetifyjs.com/images/john.jpg"></v-img>
@@ -82,6 +81,7 @@
 
 <script>
 export default {
+  layout: 'dashboard',
   name:"Forward",
       data: () => ({
       inset: true,
@@ -109,7 +109,7 @@ export default {
 
   computed: {
     singleNotification() {
-      return this.$store.state.selectedNotification;
+      return this.$store.getters.getSelectedNotification;
     },
   },
 };

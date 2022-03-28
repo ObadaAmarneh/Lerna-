@@ -1,9 +1,6 @@
 <template>
-  <div>
-    <v-app>
-      <v-main>
+
         <v-container class="py-8 px-6" fluid>
-          <div class="margin">
             <v-app-bar
               width="100%"
               outlined
@@ -176,14 +173,11 @@
                 <v-spacer></v-spacer>
               </v-card-actions>
             </v-card>
-          </div>
           <div v-if="singleNotification.length === 0">
             <NoContent></NoContent>
           </div>
         </v-container>
-      </v-main>
-    </v-app>
-  </div>
+ 
 </template>
 
 <script>
@@ -192,6 +186,8 @@ import { mapActions } from "vuex";
 import NoContent from "../components/NoContent.vue";
 
 export default {
+  layout: "dashboard",
+
   compontents: {
     NoContent,
   },
@@ -210,7 +206,7 @@ export default {
   },
   computed: {
     singleNotification() {
-      return this.$store.state.selectedNotification;
+      return this.$store.getters.getSelectedNotification;
     },
     notificationDate() {
       return moment(this.singleNotification.createdAt).fromNow();

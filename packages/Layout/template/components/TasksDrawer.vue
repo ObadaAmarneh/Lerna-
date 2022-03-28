@@ -96,10 +96,10 @@
     computed: {
       drawer: {
         get() {
-          return this.$store.state.tasksDrawer
+          return this.$store.getters.tasksDrawer
         },
         set(val) {
-          this.$store.commit('tasksDrawerValue', val)
+          this.$store.dispatch('tasksDrawer', val)
         }
       },
       computeGroupActive() {

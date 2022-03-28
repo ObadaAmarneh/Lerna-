@@ -54,7 +54,7 @@ export default {
   },
   computed: {
     singleNotification() {
-      return this.$store.state.selectedNotification;
+      return this.$store.getters.getSelectedNotification;
     },
   },
 };

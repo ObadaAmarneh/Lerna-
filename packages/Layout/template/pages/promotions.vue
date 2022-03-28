@@ -6,7 +6,11 @@
 
 <script>
     export default {
-        layout: 'dashboard'
+        layout: 'dashboard',
+            mounted() {
+            this.$router.push('notificationSettings')
+            console.log('mounted pushed');
+        }
     }
 </script>
 

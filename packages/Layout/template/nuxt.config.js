@@ -61,6 +61,10 @@ module.exports = {
       target: "https://api.notifications.agentsoncloud.com/",
       pathRewrite: { "^/notification-management/": "" },
     },
+    "/consumer-management/": {
+      target: "https://api.consumers.agentsoncloud.com/",
+      pathRewrite: { "^/consumer-management/": "" },
+    },
   },
   /*
    ** Customize the progress-bar color
@@ -95,7 +99,7 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: ["../../Notifcation/module", "@nuxtjs/axios"],
+  modules: ["../../Notifcation/module", "@nuxtjs/axios" , '../../Marketing/module' , '../../consumer-management/module'],
   components: true,
   /*
    ** Build configuration

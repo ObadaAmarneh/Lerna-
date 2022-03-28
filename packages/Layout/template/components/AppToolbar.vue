@@ -87,7 +87,7 @@
           },
           {
             icon: 'mdi-logout',
-            href: '#',
+            href: 'login',
             title: 'Logout',
             click: this.handleLogout
           }
@@ -107,7 +107,7 @@
         this.$store.commit('toggleDrawer')
       },
       toggleTasksDrawer() {
-        this.$store.commit('toggleTasksDrawerValue')
+        this.$store.commit('toggleTasksDrawer')
       },
       handleFullScreen() {
         Util.toggleFullScreen();

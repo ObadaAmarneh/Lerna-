@@ -1,10 +1,8 @@
 <template>
-  <no-ssr>
-    <div>
-      <v-app>
-        <v-main>
-          <div class="margin">
+
             <v-container class="py-8 px-6" fluid>
+                        <Navbar></Navbar>
+
               <v-app-bar
                 width="100%"
                 outlined
@@ -140,11 +138,7 @@
 
               <TheLayoutToTopFab></TheLayoutToTopFab>
             </v-container>
-          </div>
-        </v-main>
-      </v-app>
-    </div>
-  </no-ssr>
+    
 </template>
 
 <script>
@@ -160,6 +154,8 @@ import TheLayoutToTopFab from "../components/TheLayoutToTopFab.vue";
 const { io } = require("socket.io-client");
 
 export default {
+  layout: "dashboard",
+
   data: () => ({
     list: ["rami", "rami", "rami"],
     notificationTime: [],

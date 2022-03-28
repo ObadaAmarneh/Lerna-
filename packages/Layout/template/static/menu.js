@@ -15,6 +15,13 @@ const Menu = [
       href: '/Appointments'
     },
     {
+      title: 'Consumers',
+      group: 'Main',
+      name: 'Consumers',
+      icon: 'mdi-cloud',
+      href: '/Consumer'
+    },
+    {
       title: 'Services',
       group: 'Main',
       name: 'Services',
