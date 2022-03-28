@@ -53,9 +53,7 @@
                               class="hidden-xs-only"
                               to="NotificationActions/Forward"
                               color="info"
-
                             >
-                            
                               <v-icon>mdi-forward</v-icon>
                             </v-btn>
                           </template>
@@ -180,7 +178,7 @@ export default {
   },
   computed: {
     singleNotification() {
-      return this.$store.state.selectedNotification;
+      return this.$store.getters.getSelectedNotification;
     },
     getUserSender() {
       return this.singleNotification.users;
@@ -188,13 +186,6 @@ export default {
     notificationDate() {
       return moment(this.singleNotification.createdAt).fromNow();
     },
-  },
-  created() {},
-  mounted() {
-    console.log(
-      "here???????????????????",
-      this.$store.state.selectedNotification
-    );
   },
 };
 </script>
