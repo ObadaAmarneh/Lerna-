@@ -5,7 +5,7 @@ import serveStatic from 'serve-static'
 
 // with a lot of pages it might be worth considering a folder pass
 // to dynamically create this list
-const pages = ['pages/notificationSettings','pages/Received' ]
+const pages = ['pages/notificationSettings','pages/Received','pages/Sent.vue','pages/Trash.vue' ]
 export default function NuxtModule() {
   const { routeNameSplitter, trailingSlash } = this.options.router
   this.extendRoutes((routes) => {
@@ -20,7 +20,7 @@ export default function NuxtModule() {
   this.addServerMiddleware(
     serveStatic(path.resolve(__dirname, 'static')),
   )
-
+ 
 
 this.nuxt.hook('components:dirs', (dirs) => {
   dirs.unshift({
