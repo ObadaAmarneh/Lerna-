@@ -1,39 +1,41 @@
 <template>
-<div>
+  <div>
+    <Nuxt />
 
-        <Nuxt />
+    <v-toolbar fixed>
+      <v-toolbar-title
+        >Notification Management
+        <v-icon>mdi-bell-outline</v-icon></v-toolbar-title
+      >
 
-        <v-toolbar
-          fixed
-          scroll-threshold="500"
-        >
-          <v-toolbar-title>Notification Management <v-icon>mdi-bell-outline</v-icon></v-toolbar-title>
+      <v-spacer></v-spacer>
 
-          <v-spacer></v-spacer>
+      <v-menu bottom left>
+        <v-list>
+          <v-list-item v-for="(item, i) in links" :key="i">
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
 
-          <v-menu bottom left>
-            <v-list>
-              <v-list-item v-for="(item, i) in links" :key="i">
-                <v-list-item-title>{{ item.title }}</v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-menu>
-
-          <template v-slot:extension>
-            <v-tabs align-with-title>
-              <div v-for="[name, link, icon , color] in links" :key="name">
-                <v-tab class="inline" :to="link"
-                  >{{ name }}
-                  <v-icon class="inline" style="display: inline-block" :color="color">
-                    {{ icon }}
-                  </v-icon></v-tab
-                >
-              </div>
-            </v-tabs>
-          </template>
-        </v-toolbar>
-</div>
-
+      <template v-slot:extension>
+        <v-tabs align-with-title>
+          <div v-for="[name, link, icon, color] in links" :key="name">
+            <v-tab class="inline" :to="link"
+              >{{ name }}
+              <v-icon
+                class="inline"
+                style="display: inline-block"
+                :color="color"
+              >
+                {{ icon }}
+              </v-icon></v-tab
+            >
+          </div>
+        </v-tabs>
+      </template>
+    </v-toolbar>
+  </div>
 </template>
 
 <script>
@@ -41,17 +43,16 @@ import AppNotification from "../components/AppNotification";
 import Navbar from "../components/Navbar.vue";
 import Bar from "../components/Bar.vue";
 // const { io } = require("socket.io-client");
-import {mapActions } from 'vuex';
+import { mapActions } from "vuex";
 import Form from "../components/Form.vue";
 
 export default {
-
   data: () => ({
     links: [
-      ["Settings", "/notificationSettings", "mdi-cog" ,"#8A2BE2"],
-      ["Received", "/Received", "mdi-email-outline","success"],
-      ["Sent", "/Sent", "mdi-fast-forward" ,"primary"],
-      ["Trash", "/Trash", "mdi-delete","error"],
+      ["Settings", "/notificationSettings", "mdi-cog", "#8A2BE2"],
+      ["Received", "/Received", "mdi-email-outline", "success"],
+      ["Sent", "/Sent", "mdi-fast-forward", "primary"],
+      ["Trash", "/Trash", "mdi-delete", "error"],
     ],
   }),
   components: {
@@ -60,11 +61,10 @@ export default {
     Bar,
     Form,
   },
-  methods:{
-    ...mapActions(["deleteNotification" , "setFlag","setSingleNotification"]),
-
+  methods: {
+    ...mapActions(["deleteNotification", "setFlag", "setSingleNotification"]),
   },
-    mounted() {
+  mounted() {
     // console.log("received");
     // const socket = io.connect("http://localhost:30192/", {
     //   cors: {
@@ -86,11 +86,9 @@ export default {
     //   console.log("single notification found", notification);
     //   console.log("commit");
     //   this.$store.commit("setNotificationCounter");
-
     //   this.setSingleNotification(notification);
     // });
   },
-
 };
 </script>
 <style scoped>
@@ -108,7 +106,7 @@ export default {
 .inline {
   display: inline-block;
 }
-.plus-icon{
-  margin-top:6px;
+.plus-icon {
+  margin-top: 6px;
 }
 </style>
