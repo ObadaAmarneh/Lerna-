@@ -11,8 +11,8 @@
       <v-app-bar-nav-icon @click.stop="toggleDrawer()"></v-app-bar-nav-icon>
        
     </v-toolbar-title>
-
-
+<!-- this is search  -->
+<!-- 
     <v-text-field
       text
       solo-inverted
@@ -21,7 +21,7 @@
       class="mt-5"
       dense
     >
-    </v-text-field>
+    </v-text-field> -->
     <v-spacer></v-spacer>
     <v-btn icon @click="handleFullScreen()">
       <v-icon>mdi-fullscreen  </v-icon>
@@ -38,7 +38,7 @@
     <v-menu offset-y origin="center center" :nudge-right="140" :nudge-bottom="10" transition="scale-transition">
       <template v-slot:activator="{ on }">
       <v-btn icon large text v-on="on">
-        <v-avatar size="30px">
+        <v-avatar size="50px">
           <img src="https://cdn-icons-png.flaticon.com/512/1912/1912304.png" alt="Michael Wang"/>
         </v-avatar>
       </v-btn>

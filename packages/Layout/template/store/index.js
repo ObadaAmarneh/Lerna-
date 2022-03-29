@@ -1,6 +1,6 @@
 import Vuex from "vuex";
 import Layout from "./modules/mainLayout";
-import Notifications from "../../../Notifcation/store/modules/notifications";
+import Notifications from "../../../notifications.agentsoncloud.com/store/modules/notifications";
 import allConsumers from "../../../consumer-management/store/modules/allConsumers";
 import blackListManegment from "../../../consumer-management/store/modules/blackListManegment";
 import serviceProviders from "../../../consumer-management/store/modules/serviceProviders";

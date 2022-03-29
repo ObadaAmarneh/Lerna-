@@ -97,7 +97,7 @@ const Menu = [
       group: 'Main',
       name: 'Notification management',
       icon: 'mdi-bell-outline',
-      href: '/Notifications'
+      href: '/notificationSettings'
     },
   
     {

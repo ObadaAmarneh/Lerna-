@@ -23,11 +23,11 @@
             <v-spacer></v-spacer>
 
           </v-footer>
-            
+                <TheLayoutToTopFab></TheLayoutToTopFab>
         </v-content>
         <!-- Go to top -->
 
-     <TheLayoutToTopFab></TheLayoutToTopFab>
+ 
         <!-- theme setting -->
 
         <v-navigation-drawer

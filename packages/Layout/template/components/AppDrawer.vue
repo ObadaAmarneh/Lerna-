@@ -1,12 +1,16 @@
 <template>
-  <v-navigation-drawer id="appDrawer" fixed app v-model="drawer" width="260">
+  <v-navigation-drawer 
+    :mini-variant.sync="mini"
+   id="appDrawer" fixed app v-model="drawer" width="260"  >
     <v-toolbar class="drawer-color" height="125%" dark>
       <img src="../static/Wish-Emblem.png" height="36" alt="Agents On Cloud" />
       <v-toolbar-title class="ml-0 pl-3">
         <span class="hidden-sm-and-down">I Wish</span>
       </v-toolbar-title>
     </v-toolbar>
-    <v-list dense expand>
+    <VuePerfectScrollbar class="drawer-menu--scroll" :settings="scrollSettings">
+
+    <v-list  expand>
       <template v-for="(item, i) in menus">
         <!--group with subitems-->
         <v-list-group
@@ -17,8 +21,8 @@
           no-action="no-action"
         >
           <v-list-item slot="activator" ripple="ripple">
-            <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-content >
+              <v-list-item-title >{{ item.title }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
           <template v-for="(subItem, i) in item.items">
@@ -93,14 +97,16 @@
         </v-list-item>
       </template>
     </v-list>
+    </VuePerfectScrollbar>
   </v-navigation-drawer>
 </template>
 <script>
 import menu from "../static/menu";
+import VuePerfectScrollbar from 'vue-perfect-scrollbar';
 
 export default {
   name: "app-drawer",
-  components: {},
+  components: {VuePerfectScrollbar},
   props: {
     expanded: {
       type: Boolean,
@@ -146,13 +152,7 @@ export default {
 
 <style lang="css">
 /* use this if they asked you to add a scrollbar to the dashboard */
-/* #appDrawer {
-  overflow: hidden; }
-  #appDrawer .drawer-menu--scroll {
-    height: calc(100vh - 48px);
-    overflow: hidden;
-    
-    }  */
+
 
 .v-list-item--active{
 background: rgba(1, 255, 28, 0.23);
@@ -164,4 +164,5 @@ border: 1px solid rgba(1, 255, 28, 0.3);
 .drawer-color {
   background-color: #1976d2 !important;
 }
+
 </style>

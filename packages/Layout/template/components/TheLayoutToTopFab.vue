@@ -1,5 +1,5 @@
 <template>
-  <v-fab-transition>
+  <v-fab-transition >
     <v-btn
       v-show="fab"
       v-scroll="onScroll"

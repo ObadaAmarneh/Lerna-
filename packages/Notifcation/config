@@ -1,8 +1,0 @@
-Host drop
-AddKeysToAgent yes
-HostName 147.182.165.171
-User agentsoncloud
-IdentityFile ~.ssh/id_rsa_do
-
-PasswordAuthentication no
-Port 38128

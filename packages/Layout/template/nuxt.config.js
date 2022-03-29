@@ -4,7 +4,7 @@ import colors from "vuetify/es5/util/colors";
 const VuetifyLoaderPlugin = require("vuetify-loader/lib/plugin");
 
 module.exports = {
-  ssr: false,
+  ssr: true,
   /*
    ** Headers of the page
    */
@@ -74,12 +74,12 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'],
 
   /*
    ** Plugins to load before mounting the App
    */
-  // plugins: ["@/plugins/vee-validate", "@/plugins/vue-sc"],
+  plugins: ["@/plugins/vee-validate", "@/plugins/vue-sc"],
   vuetify: {
     theme: {
       dark: false,
@@ -99,7 +99,7 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: ["../../Notifcation/module", "@nuxtjs/axios" , '../../Marketing/module' , '../../consumer-management/module'],
+  modules: ["../../notifications.agentsoncloud.com/module", "@nuxtjs/axios"  , '../../consumer-management/module'],
   components: true,
   /*
    ** Build configuration

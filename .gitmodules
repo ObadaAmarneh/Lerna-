@@ -4,3 +4,6 @@
 [submodule "packages/consumer-management"]
 	path = packages/consumer-management
 	url = https://github.com/agents-on-cloud/consumer-management.git
+[submodule "packages/notifications.agentsoncloud.com"]
+	path = packages/notifications.agentsoncloud.com
+	url = git@github.com:agents-on-cloud/notifications.agentsoncloud.com.git
