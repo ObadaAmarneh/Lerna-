@@ -7,3 +7,9 @@
 [submodule "packages/notifications.agentsoncloud.com"]
 	path = packages/notifications.agentsoncloud.com
 	url = git@github.com:agents-on-cloud/notifications.agentsoncloud.com.git
+[submodule "packages/facilities.agentsoncloud.com"]
+	path = packages/facilities.agentsoncloud.com
+	url = git@github.com:agents-on-cloud/facilities.agentsoncloud.com.git
+[submodule "packages/inventory.agentsoncloud.com"]
+	path = packages/inventory.agentsoncloud.com
+	url = git@github.com:agents-on-cloud/inventory.agentsoncloud.com.git
