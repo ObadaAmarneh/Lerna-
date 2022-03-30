@@ -99,7 +99,11 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: ["../../notifications.agentsoncloud.com/module", "@nuxtjs/axios"  , '../../consumer-management/module'],
+  modules: [
+    "../../notifications.agentsoncloud.com/module", "@nuxtjs/axios",
+    '../../consumer-management/module',
+    '../../facilities.agentsoncloud.com/module',
+  '../../inventory.agentsoncloud.com/module'],
   components: true,
   /*
    ** Build configuration

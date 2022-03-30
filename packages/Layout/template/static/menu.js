@@ -11,21 +11,21 @@ const Menu = [
       title: 'Appointments',
       group: 'Main',
       name: 'Appointments',
-      icon: 'mdi-cloud',
+      icon: 'mdi-calendar-plus',
       href: '/Appointments'
     },
     {
       title: 'Consumers',
       group: 'Main',
       name: 'Consumers',
-      icon: 'mdi-cloud',
+      icon: 'mdi-account-plus-outline',
       href: '/Consumer'
     },
     {
       title: 'Services',
       group: 'Main',
       name: 'Services',
-      icon: 'mdi-cloud',
+      icon: 'mdi-wrench-outline',
       href: '/Services'
     },
     {
@@ -33,62 +33,62 @@ const Menu = [
       group: 'Main',
       name: 'Inventory',
       // target: '_blank', target blank to open a new page with the same layout guys =)
-      icon: 'mdi-cloud',
-      href: '/Inventory/'
+      icon: 'mdi-cube-outline',
+      href: '/Inventory'
     },
     {
       title: 'Clinic',
       group: 'Main',
-      icon: 'mdi-cloud',
+      icon: 'mdi-hospital-building',
       name: 'Clinic',
       href: '/Clinic'
     },
     {
       title: 'Billing',
       group: 'Main',
-      icon: 'mdi-cloud',
+      icon: 'mdi-note-plus-outline',
       name: 'Billing',
       href: '/Billing'
     },
     {
       title: 'Facilities',
       group: 'Main',
-      icon: 'mdi-cloud',
+      icon: 'mdi-home-assistant',
       name: 'Facilities',
       href: '/Facilities'
     },
     {
       title: 'Incidents',
       group: 'Main',
-      icon: 'mdi-cloud',
+      icon: 'mdi-alert-octagon-outline',
       name: 'Incidents',
       href: '/Incidents'
     },
     {
       title: 'Marketing',
       group: 'Main',
-      icon: 'mdi-cloud',
+      icon: 'mdi-gesture-double-tap',
       name: 'Marketing',
       href: '/Marketing'
     },
     {
       title: 'Performance',
       group: 'Main',
-      icon: 'mdi-cloud',
+      icon: 'mdi-account-star',
       name: 'Performance',
       href: '/Performance'
     },
     {
       title: 'KnowledgeBase',
       group: 'Main',
-      icon: 'mdi-cloud',
+      icon: 'mdi-account-search',
       name: 'KnowledgeBase',
       href: '/KnowledgeBase'
     },
     {
       title: 'providers',
       group: 'Main',
-      icon: 'mdi-cloud',
+      icon: 'mdi-account-multiple',
       name: 'providers',
       href: '/providers'
     },
