@@ -74,12 +74,16 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'],
+  css: ['vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css' ,   "vue2-timepicker/dist/VueTimepicker.css"],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["@/plugins/vee-validate", "@/plugins/vue-sc"],
+  plugins: [
+    "@/plugins/vee-validate",
+    "@/plugins/vue-sc", 
+    { src: "~/plugins/VueDateTime.js", ssr: false },
+],
   vuetify: {
     theme: {
       dark: false,

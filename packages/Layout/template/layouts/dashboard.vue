@@ -16,10 +16,12 @@
     
           <!-- App Footer -->
           <v-footer height="auto" class="white pa-3 app--footer">
-      
+         
             <span class="caption"
               >Agents On Cloud &copy; {{ new Date().getFullYear() }}</span
             >
+
+                   <img class="ml-2" width="40" height="40" src="../assets/Img/94598985.jpg">
             <v-spacer></v-spacer>
 
           </v-footer>

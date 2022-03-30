@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-list >
+    <v-list elevation="21"  dense >
       <v-list-item
         v-for="(item, index) in items"
         :key="index"

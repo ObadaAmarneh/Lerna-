@@ -176,6 +176,7 @@ const notifications = {
           getAllNotifications(state) {
             return state.notifications;
           },
+          
           getNotificationBySenderId(state) {
             return state.sentNotifications;
           },
