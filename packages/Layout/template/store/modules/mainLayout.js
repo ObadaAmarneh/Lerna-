@@ -33,7 +33,6 @@ const Layout = {
       state.selectedNotification = singleNotification;
     },
     removeNotification(state, _id) {
-      console.log("here is the type", typeof _id);
       if (typeof _id == "object") {
         _id.forEach((id) => {
           state.notifications = state.notifications.filter(
@@ -56,16 +55,13 @@ const Layout = {
       commit("tasksDrawer", payload);
     },
     setSingleNotification({ commit }, notifications) {
-      console.log("sat single notification");
   
       commit("mutateSingleNotification", notifications);
     },
     getNotificationDetails({ commit }, notificationDetail) {
-      console.log("ana", notificationDetail);
       commit("setSelectedNotification", notificationDetail);
     },
     async deleteNotification({ commit }, id) {
-      console.log("fired", id);
       Swal.fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
@@ -77,7 +73,6 @@ const Layout = {
         reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
-          console.log("after confiremd", id);
           this.$axios.$put(`/notification-management/delete/${id}`);
           commit("removeNotification", id);
           Swal.fire("Deleted!", "Your file has been deleted.", "success");

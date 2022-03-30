@@ -37,7 +37,6 @@ export default {
       // Reply and forward actions
       if (selectedAction === "Reply" || selectedAction === "Forward") {
         //  route.push({path: `/${selectedAction}`})
-        console.log("selectedAction",selectedAction , id);
 
         this.$router.push({ path: `/NotificationActions/${selectedAction}` });
          
@@ -46,7 +45,6 @@ export default {
       }
       // Delete and Unread Actions
       else if (selectedAction == "Unread") {
-        console.log("unread");
       } else if (selectedAction == "Flag") {
         this.setFlag(id)
       }

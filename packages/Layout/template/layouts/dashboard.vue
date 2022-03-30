@@ -115,8 +115,7 @@ export default {
     // //UserName here
     socket.emit("userConnected", { username: "Agents On Cloud" });
     socket.on("addNotification", (notification) => {
-      console.log("single notification found", notification);
-      console.log("commit");
+
       this.$store.commit("setNotificationCounter");
       this.setSingleNotification(notification);
     });
