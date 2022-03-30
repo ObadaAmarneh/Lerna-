@@ -5,7 +5,7 @@
         <app-drawer class="app--drawer"></app-drawer>
         <TasksDrawer class="app--drawer"></TasksDrawer>
         <app-toolbar class="app--toolbar"></app-toolbar>
-        <v-content>
+        <v-main>
           <!-- Page Header -->
           <page-header></page-header>
                   
@@ -24,7 +24,7 @@
 
           </v-footer>
                 <TheLayoutToTopFab></TheLayoutToTopFab>
-        </v-content>
+        </v-main>
         <!-- Go to top -->
 
  
