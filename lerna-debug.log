@@ -1,0 +1,14 @@
+0 silly argv {
+0 silly argv   _: [ 'create' ],
+0 silly argv   dependencies: [ 'nuxt', 'portal-one' ],
+0 silly argv   yes: true,
+0 silly argv   y: true,
+0 silly argv   lernaVersion: '4.0.0',
+0 silly argv   '$0': '..\\..\\AppData\\Roaming\\npm\\node_modules\\lerna\\cli.js',
+0 silly argv   name: 'portal-three'
+0 silly argv }
+1 notice cli v4.0.0
+2 verbose rootPath C:\Users\User\Desktop\Mono
+3 warn ENOREMOTE No git remote found, skipping repository property
+4 error HttpErrorGeneral: 404 Not Found - GET https://registry.npmjs.org/portal-one - Not found
+4 error     at C:\Users\User\AppData\Roaming\npm\node_modules\lerna\node_modules\pacote\node_modules\npm-registry-fetch\check-response.js:95:15
