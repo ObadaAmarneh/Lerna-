@@ -4,7 +4,8 @@
       <v-container fluid fill-height>
         <v-layout align-center justify-center>
           <v-flex xs12 sm8 md4 lg4>
-            <v-card class="elevation-1 pa-3">
+            <v-card class="pa-3"  elevation="12"
+  outlined>
               <v-card-text>
                 <div class="layout column align-center">
                   <img src="../static/Wish-Emblem.png" alt="Vue Material Admin" width="180" height="120">

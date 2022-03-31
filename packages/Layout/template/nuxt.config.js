@@ -82,7 +82,6 @@ module.exports = {
     { src: "./plugins/VueExpandPanel.js", ssr: false },
 ],
   vuetify: {
- 
     theme: {
       dark: false,
       themes: {
@@ -118,7 +117,6 @@ module.exports = {
     "@nuxtjs/vuetify",
   ],
   build: {
-    vendor: ['vuetify']
     /*
      ** You can extend webpack config here
      */
