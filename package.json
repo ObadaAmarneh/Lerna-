@@ -2,9 +2,16 @@
   "name": "root",
   "private": true,
   "devDependencies": {
+    "concurrently": "^7.0.0",
     "lerna": "^4.0.0"
   },
-  "workspaces":[
+  "scripts": {
+    "install-all": "npm install && npm run server_install && npm run client_install && concurrently --prefix \"{time}-{name}\" -n \"Server|Client\" --name-separator \"|\" -c \"blue('40%'),green('40%')\" \"npm run server\" \"npm run client\"",
+    "server_install": "cd backend && npm install",
+    "client_install": "cd frontend && npm install"
+  },
+  "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {}
 }

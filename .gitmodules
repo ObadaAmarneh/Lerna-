@@ -1,9 +1,15 @@
-[submodule "packages/Marketing"]
-	path = packages/Marketing
-	url = https://github.com/agents-on-cloud/Marketing.git
 [submodule "packages/consumer-management"]
 	path = packages/consumer-management
-	url = https://github.com/agents-on-cloud/consumer-management.git
+	url = git@github.com:agents-on-cloud/consumers.agentsoncloud.com.git
+	ignore = all
 [submodule "packages/notifications.agentsoncloud.com"]
 	path = packages/notifications.agentsoncloud.com
 	url = git@github.com:agents-on-cloud/notifications.agentsoncloud.com.git
+	ignore = all
+[submodule "packages/Marketing"]
+	path = packages/Marketing
+	url = git@github.com:agents-on-cloud/Marketing.git
+	ignore = all
+[submodule "packages/performance.agentsoncloud.com"]
+	path = packages/performance.agentsoncloud.com
+	url = git@github.com:agents-on-cloud/performance.agentsoncloud.com.git

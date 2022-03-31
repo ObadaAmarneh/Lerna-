@@ -1,10 +1,18 @@
 import colors from 'vuetify/es5/util/colors'
+import { proxy as proxy1 } from '../Marketing/module'
+import { proxy as proxy2 } from '../performance.agentsoncloud.com/module'
 
 export default {
+  server: {
+    port: 3001, // default: 3000
+  },
+  ssr: false,
+  target: 'server',
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - feature3',
-    title: 'feature3',
+    title: 'Life Coach',
     htmlAttrs: {
       lang: 'en'
     },
@@ -21,10 +29,13 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '../performance.agentsoncloud.com/assets/css/main.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+
+    // { src: '../Marketing/plugins/chart.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -33,12 +44,36 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
+    ['@nuxtjs/vuetify', {
+      defaultAssets: {
+        font: {
+          family: 'Roboto'
+        },
+        icons: 'mdi'
+      }
+    }],
+    '@nuxt/postcss8',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
+  modules: ['../performance.agentsoncloud.com/module', '../Marketing/module', '@nuxtjs/axios'],
+
+  axios: {
+    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
+    proxy: true,
+  },
+  publicRuntimeConfig: {
+    axios: {
+      browserBaseURL: process.env.BROWSER_BASE_URL
+    }
+  },
+
+  privateRuntimeConfig: {
+    axios: {
+      baseURL: process.env.BASE_URL
+    }
+  },
+  proxy: { ...proxy1, ...proxy2 },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
@@ -56,10 +91,27 @@ export default {
           success: colors.green.accent3
         }
       }
-    }
+    },
+    treeShake: false
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    // transpile: [
+    //   "chart.js",
+    //   "vue-chartjs"
+
+    // ],
+    // cssSourceMap: true,
+    postcss: {
+      plugins: {
+        'postcss-import': true,
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },
+  },
+  extend(config, ctx) {
+    config.resolve.symlinks = false
   }
 }
