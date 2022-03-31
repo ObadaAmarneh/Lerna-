@@ -26,6 +26,7 @@
     "sweetalert2": "^11.4.4",
     "vee-validate": "^2.1.7",
     "vue-datetime": "^1.0.0-beta.14",
+    "vue-expand-panel": "^1.0.5",
     "vue-fullcalendar": "^1.0.9",
     "vue-perfect-scrollbar": "github:Degfy/vue-perfect-scrollbar#1.x",
     "vue-quill-editor": "^3.0.6",

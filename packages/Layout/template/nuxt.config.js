@@ -1,8 +1,4 @@
-const pkg = require("./package");
 import colors from "vuetify/es5/util/colors";
-
-const VuetifyLoaderPlugin = require("vuetify-loader/lib/plugin");
-
 module.exports = {
   ssr: true,
   /*
@@ -83,8 +79,10 @@ module.exports = {
     "@/plugins/vee-validate",
     "@/plugins/vue-sc", 
     { src: "~/plugins/VueDateTime.js", ssr: false },
+    { src: "./plugins/VueExpandPanel.js", ssr: false },
 ],
   vuetify: {
+ 
     theme: {
       dark: false,
       themes: {
@@ -120,6 +118,7 @@ module.exports = {
     "@nuxtjs/vuetify",
   ],
   build: {
+    vendor: ['vuetify']
     /*
      ** You can extend webpack config here
      */
