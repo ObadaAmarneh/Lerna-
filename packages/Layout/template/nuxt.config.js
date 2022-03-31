@@ -1,8 +1,4 @@
-const pkg = require("./package");
 import colors from "vuetify/es5/util/colors";
-
-const VuetifyLoaderPlugin = require("vuetify-loader/lib/plugin");
-
 module.exports = {
   ssr: true,
   /*
@@ -74,12 +70,17 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'],
+  css: ['vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css' ,   "vue2-timepicker/dist/VueTimepicker.css"],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["@/plugins/vee-validate", "@/plugins/vue-sc"],
+  plugins: [
+    "@/plugins/vee-validate",
+    "@/plugins/vue-sc", 
+    { src: "~/plugins/VueDateTime.js", ssr: false },
+    { src: "./plugins/VueExpandPanel.js", ssr: false },
+],
   vuetify: {
     theme: {
       dark: false,
@@ -99,7 +100,11 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: ["../../notifications.agentsoncloud.com/module", "@nuxtjs/axios"  , '../../consumer-management/module'],
+  modules: [
+    "../../notifications.agentsoncloud.com/module", "@nuxtjs/axios",
+    '../../consumer-management/module',
+    '../../facilities.agentsoncloud.com/module',
+  '../../inventory.agentsoncloud.com/module'],
   components: true,
   /*
    ** Build configuration

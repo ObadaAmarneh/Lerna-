@@ -54,7 +54,6 @@ export default {
   methods: {
     OnClickRecipients(value) {
       this.$emit("selectedRecipients", value);
-      console.log("updated", value);
     },
     searchUsers(e) {
       if (!this.searchTerm) {

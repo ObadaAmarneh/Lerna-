@@ -48,7 +48,6 @@ const notifications = {
             return state.deletedNotifications
           },
           getDialog(state) {
-            console.log("set dilog gets clled from getters", state.dialog);
         
             return state.dialog;
           },
@@ -88,7 +87,6 @@ const notifications = {
                   showConfirmButton: false,
                   timer: 1500,
                 });
-                console.log("Rersult>>>>>>>>>>>>>>>>>>>>>", result.data);
               })
               .catch((err) => {
                 Swal.fire({
@@ -99,22 +97,18 @@ const notifications = {
         
                   timer: 3000,
                 });
-                console.log("err>>>>>>>>>>>>>>>>>>>>", err);
               });
           },
           getNotificationDetails({ commit }, notificationDetail) {
-            console.log("ana", notificationDetail);
             commit("setSelectedNotification", notificationDetail);
           },
           getAllDeletedNotifications({ commit }) {
-            console.log("getAllDeletedNotifications fired");
             // get the sender id from CAIM 
             axios.post("http://localhost:30192/deleted", { sender_id: 3 }).then((notifications) => {
               commit("SetDeletedNotifications", notifications.data);
             });
           },
           async deleteNotification({ commit }, id) {
-            console.log("fired", id);
             Swal.fire({
               title: "Are you sure?",
               text: "You won't be able to revert this!",
@@ -126,7 +120,6 @@ const notifications = {
               reverseButtons: true
             }).then((result) => {
               if (result.isConfirmed) {
-                console.log("after confiremd", id);
                 axios.put(`http://localhost:30192/delete/${id}`);
                 commit("removeNotification", id);
                 Swal.fire("Deleted!", "Your file has been deleted.", "success");
@@ -139,7 +132,6 @@ const notifications = {
               .get("http://localhost:30192senders/3")
               .then((notification) => {
                 commit("setSentNotifications", notification.data);
-                console.log("get notifcaiton by id ", notification.data);
               });
           },
           async setFlag({ commit }, id) {
@@ -150,7 +142,6 @@ const notifications = {
             commit("setNotifications", notifications);
           },
           setSingleNotification({ commit }, notifications) {
-            console.log("sat single notification");
         
             commit("mutateSingleNotification", notifications);
           },
@@ -179,13 +170,13 @@ const notifications = {
             return state.deletedNotifications
           },
           getDialog(state) {
-            console.log("set dilog gets clled from getters", state.dialog);
         
             return state.dialog;
           },
           getAllNotifications(state) {
             return state.notifications;
           },
+          
           getNotificationBySenderId(state) {
             return state.sentNotifications;
           },

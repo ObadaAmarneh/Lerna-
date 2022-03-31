@@ -5,7 +5,7 @@
         <app-drawer class="app--drawer"></app-drawer>
         <TasksDrawer class="app--drawer"></TasksDrawer>
         <app-toolbar class="app--toolbar"></app-toolbar>
-        <v-content>
+        <v-main>
           <!-- Page Header -->
           <page-header></page-header>
                   
@@ -16,15 +16,16 @@
     
           <!-- App Footer -->
           <v-footer height="auto" class="white pa-3 app--footer">
-      
+          <img class="ml-2 " width="40" height="40" src="../assets/Img/94598985.jpg">
             <span class="caption"
               >Agents On Cloud &copy; {{ new Date().getFullYear() }}</span
             >
+                  
             <v-spacer></v-spacer>
 
           </v-footer>
                 <TheLayoutToTopFab></TheLayoutToTopFab>
-        </v-content>
+        </v-main>
         <!-- Go to top -->
 
  
@@ -115,8 +116,7 @@ export default {
     // //UserName here
     socket.emit("userConnected", { username: "Agents On Cloud" });
     socket.on("addNotification", (notification) => {
-      console.log("single notification found", notification);
-      console.log("commit");
+
       this.$store.commit("setNotificationCounter");
       this.setSingleNotification(notification);
     });

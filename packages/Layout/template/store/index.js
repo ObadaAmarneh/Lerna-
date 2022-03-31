@@ -5,6 +5,7 @@ import allConsumers from "../../../consumer-management/store/modules/allConsumer
 import blackListManegment from "../../../consumer-management/store/modules/blackListManegment";
 import serviceProviders from "../../../consumer-management/store/modules/serviceProviders";
 import services from "../../../consumer-management/store/modules/services";
+import inventory from '../../../inventory.agentsoncloud.com/store/modules/inventory'
 
 const createStore = () => {
   return new Vuex.Store({
@@ -14,7 +15,8 @@ const createStore = () => {
       allConsumers,
       services,
       serviceProviders,
-      blackListManegment
+      blackListManegment,
+      inventory
 
     },
   });

@@ -259,7 +259,6 @@ export default {
   },
   methods: {
     selectedRecipientsValue(recipientsValue) {
-      console.log("ss", recipientsValue);
       this.selectedRecipients = recipientsValue;
       return recipientsValue;
     },
@@ -299,7 +298,6 @@ export default {
           to: this.toDate,
         },
       };
-      console.log("the revceived object", notificationCreated);
       this.$store.dispatch("createNotification", notificationCreated);
     },
     clear() {
@@ -313,7 +311,6 @@ export default {
     },
     setDateTimeFlag(showFlag) {
       this.showDatetime = !showFlag;
-      console.log(showFlag);
     },
   },
 };

@@ -191,10 +191,7 @@ export default {
   },
   created() {},
   mounted() {
-    console.log(
-      "here???????????????????",
-      this.$store.getters.getSelectedNotification
-    );
+
   },
 };
 </script>

@@ -80,7 +80,8 @@
                     mdi-dots-vertical
                   </v-icon>
                 </template>
-                <Ellipsis :selected="selected"></Ellipsis>
+              <Ellipsis :selected="selected"></Ellipsis>
+                
               </v-menu>
             </v-list-item-action>
           </v-list-item>
