@@ -5,7 +5,6 @@
 [submodule "packages/notifications.agentsoncloud.com"]
 	path = packages/notifications.agentsoncloud.com
 	url = git@github.com:agents-on-cloud/notifications.agentsoncloud.com.git
-<<<<<<< HEAD
 	ignore = all
 [submodule "packages/Marketing"]
 	path = packages/Marketing
@@ -14,11 +13,9 @@
 [submodule "packages/performance.agentsoncloud.com"]
 	path = packages/performance.agentsoncloud.com
 	url = git@github.com:agents-on-cloud/performance.agentsoncloud.com.git
-=======
 [submodule "packages/facilities.agentsoncloud.com"]
 	path = packages/facilities.agentsoncloud.com
 	url = git@github.com:agents-on-cloud/facilities.agentsoncloud.com.git
 [submodule "packages/inventory.agentsoncloud.com"]
 	path = packages/inventory.agentsoncloud.com
 	url = git@github.com:agents-on-cloud/inventory.agentsoncloud.com.git
->>>>>>> 7740f6ae1378d2288a3571122840b6093c1fe003
