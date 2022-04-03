@@ -6,7 +6,7 @@ const Layout = {
   namespace: true,
   state: {
     drawer: true,
-    tasksDrawer: false,
+    tasksDrawer: true,
     notifications:[],
     selectedNotification:[]
   },

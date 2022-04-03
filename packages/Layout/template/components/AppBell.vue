@@ -7,7 +7,6 @@
     class="mt-12"
     z-index="10"
   >
-
     <template v-slot:activator="{ on }">
       <v-btn icon text v-on="on" @click="restCounter">
         <v-badge
@@ -51,9 +50,9 @@
                 />
               </v-avatar>
             </v-list-item-avatar>
-
             <v-list-item-content
               @click.prevent.stop="notificationContent(item)"
+              v-on="!on" 
             >
               <h6 default class="caption">
                 {{ item.notification_subject }}

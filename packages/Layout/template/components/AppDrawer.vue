@@ -150,7 +150,7 @@ export default {
 };
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 /* use this if they asked you to add a scrollbar to the dashboard */
 
 

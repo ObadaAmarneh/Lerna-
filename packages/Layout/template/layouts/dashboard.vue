@@ -8,27 +8,29 @@
         <v-main>
           <!-- Page Header -->
           <page-header></page-header>
-                  
 
           <div class="page-wrapper">
             <nuxt />
           </div>
-    
+
           <!-- App Footer -->
           <v-footer height="auto" class="white pa-3 app--footer">
-          <img class="ml-2 " width="40" height="40" src="../assets/Img/94598985.jpg">
+            <img
+              class="ml-2"
+              width="40"
+              height="40"
+              src="../assets/Img/94598985.jpg"
+            />
             <span class="caption"
               >Agents On Cloud &copy; {{ new Date().getFullYear() }}</span
             >
-                  
-            <v-spacer></v-spacer>
 
+            <v-spacer></v-spacer>
           </v-footer>
-                <TheLayoutToTopFab></TheLayoutToTopFab>
+          <TheLayoutToTopFab></TheLayoutToTopFab>
         </v-main>
         <!-- Go to top -->
 
- 
         <!-- theme setting -->
 
         <v-navigation-drawer
@@ -60,13 +62,13 @@
 </template>
 
 <script>
-import TheLayoutToTopFab from '../components/TheLayoutToTopFab.vue'
+import TheLayoutToTopFab from "../components/TheLayoutToTopFab.vue";
 import AppDrawer from "../components/AppDrawer.vue";
 import TasksDrawer from "../components/TasksDrawer";
 import AppToolbar from "../components/AppToolbar";
 import AppFab from "../components/AppFab";
 import PageHeader from "../components/PageHeader";
-import {mapActions } from 'vuex';
+import { mapActions } from "vuex";
 import ThemeSettings from "../components/ThemeSettings";
 const { io } = require("socket.io-client");
 export default {
@@ -90,7 +92,7 @@ export default {
   }),
 
   methods: {
-     ...mapActions(["setSingleNotification"]),
+    ...mapActions(["setSingleNotification"]),
     openThemeSettings() {
       this.$vuetify.goTo(0);
       this.rightDrawer = !this.rightDrawer;
@@ -98,11 +100,11 @@ export default {
   },
   mounted() {
     console.log("Socket On");
-    const socket = io.connect("https://api.notifications.agentsoncloud.com/",{
+    const socket = io.connect("https://api.notifications.agentsoncloud.com/", {
       cors: {
         origin: "*",
       },
-      transports : ['websocket']
+      transports: ["websocket"],
     });
     // // socket.on('connection', (connection) => {
     // //   console.log('connected', connection);
@@ -116,7 +118,6 @@ export default {
     // //UserName here
     socket.emit("userConnected", { username: "Agents On Cloud" });
     socket.on("addNotification", (notification) => {
-
       this.$store.commit("setNotificationCounter");
       this.setSingleNotification(notification);
     });

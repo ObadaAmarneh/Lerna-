@@ -73,7 +73,7 @@
 
 </template>
 <script>
-  import menu from '../static/menu';
+  import taskMenu from '../static/taskMenu';
 
   export default {
     name: 'app-drawer',
@@ -88,7 +88,7 @@
     },
     data: () => ({
       mini: false,
-      menus: menu,
+      menus: taskMenu,
       scrollSettings: {
         maxScrollbarLength: 160
       }

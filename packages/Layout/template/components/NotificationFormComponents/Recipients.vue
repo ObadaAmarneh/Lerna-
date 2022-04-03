@@ -11,7 +11,7 @@
       @change="OnClickRecipients(selectedRecipients)"
     >
       <template #selection="{ item  }">
-        <v-chip class="ma-2 sm" close  small-chips color="green" text-color="white" @click:close="selectedRecipients.splice(selectedRecipients.indexOf(item), 1);">
+        <v-chip v-if="selectedRecipients.length>4 ?  item == 'users': selectedRecipients " small dense class="ma-2 sm" close  small-chips color="green" text-color="white" @click:close="selectedRecipients.splice(selectedRecipients.indexOf(item), 1);">
          <v-avatar left>
               <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
             </v-avatar> 
@@ -48,7 +48,7 @@ export default {
   data: () => ({
     selectedRecipients: [],
     searchTerm: "",
-    recipients: ["CIAM", "Supplier", "Customer", "Others"],
+    recipients: ["CIAM", "Supplier", "Customer", "Others","ss","11","22","ds","xz","zx",],
     recipientsCopy: [],
   }),
   methods: {
