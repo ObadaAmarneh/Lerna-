@@ -104,6 +104,7 @@ module.exports = {
     "../../notifications.agentsoncloud.com/module", "@nuxtjs/axios",
     '../../consumer-management/module',
     '../../facilities.agentsoncloud.com/module',
+    '../../clinic.management.agentsoncloud.com/module',
   '../../inventory.agentsoncloud.com/module'],
   components: true,
   /*
@@ -114,7 +115,7 @@ module.exports = {
   },
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    "@nuxtjs/vuetify",
+    ['@nuxtjs/vuetify', {treeShake: false}]
   ],
   build: {
     /*

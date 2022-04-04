@@ -10,13 +10,19 @@
       multiple
       @change="OnClickRecipients(selectedRecipients)"
     >
-      <template #selection="{ item  }">
-        <v-chip v-if="selectedRecipients.length>4 ?  item == 'users': selectedRecipients " small dense class="ma-2 sm" close  small-chips color="green" text-color="white" @click:close="selectedRecipients.splice(selectedRecipients.indexOf(item), 1);">
+      <template #selection="{ item ,index  }">
+        <v-chip v-if="index == 1 || index == 0 " class="ma-2 sm" close  small-chips color="green" text-color="white" @click:close="selectedRecipients.splice(selectedRecipients.indexOf(item), 1);">
          <v-avatar left>
               <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
             </v-avatar> 
           {{item }}
         </v-chip>
+        <span
+          v-if="index === 2"
+          class="grey--text text-caption"
+        >
+          (+{{ selectedRecipients.length - 2 }} others)
+        </span>
       </template>
 
       <template v-slot:prepend-item>

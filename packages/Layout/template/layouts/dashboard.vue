@@ -125,7 +125,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 .setting-fab {
   top: 50% !important;
   right: 0;
@@ -139,5 +139,14 @@ export default {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+html {
+overflow-y: auto 
+}
+
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 </style>

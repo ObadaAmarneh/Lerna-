@@ -5,7 +5,9 @@ import allConsumers from "../../../consumer-management/store/modules/allConsumer
 import blackListManegment from "../../../consumer-management/store/modules/blackListManegment";
 import serviceProviders from "../../../consumer-management/store/modules/serviceProviders";
 import services from "../../../consumer-management/store/modules/services";
-import inventory from '../../../inventory.agentsoncloud.com/store/modules/inventory'
+import inventory from '../../../inventory.agentsoncloud.com/store/modules/inventory';
+import createAppointment from '../../../clinic.management.agentsoncloud.com/store/modules/createappointment'
+import updateAppointment from '../../../clinic.management.agentsoncloud.com/store/modules/updateappointment'
 
 const createStore = () => {
   return new Vuex.Store({
@@ -16,7 +18,9 @@ const createStore = () => {
       services,
       serviceProviders,
       blackListManegment,
-      inventory
+      inventory,
+      createAppointment,
+      updateAppointment
 
     },
   });
