@@ -13,3 +13,6 @@
 [submodule "packages/inventory.agentsoncloud.com"]
 	path = packages/inventory.agentsoncloud.com
 	url = git@github.com:agents-on-cloud/inventory.agentsoncloud.com.git
+[submodule "packages/clinic.management.agentsoncloud.com"]
+	path = packages/clinic.management.agentsoncloud.com
+	url = https://github.com/agents-on-cloud/clinic.management.agentsoncloud.com.git
