@@ -1,9 +1,7 @@
 [submodule "packages/Marketing"]
 	path = packages/Marketing
 	url = https://github.com/agents-on-cloud/Marketing.git
-[submodule "packages/consumer-management"]
-	path = packages/consumer-management
-	url = https://github.com/agents-on-cloud/consumer-management.git
+
 [submodule "packages/notifications.agentsoncloud.com"]
 	path = packages/notifications.agentsoncloud.com
 	url = git@github.com:agents-on-cloud/notifications.agentsoncloud.com.git
@@ -16,3 +14,6 @@
 [submodule "packages/clinic.management.agentsoncloud.com"]
 	path = packages/clinic.management.agentsoncloud.com
 	url = https://github.com/agents-on-cloud/clinic.management.agentsoncloud.com.git
+[submodule "packages/consumers.agentsoncloud.com"]
+	path = packages/consumers.agentsoncloud.com
+	url = https://github.com/agents-on-cloud/consumers.agentsoncloud.com.git
