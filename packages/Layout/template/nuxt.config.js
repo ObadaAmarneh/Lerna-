@@ -102,7 +102,7 @@ module.exports = {
    */
   modules: [
     "../../notifications.agentsoncloud.com/module", "@nuxtjs/axios",
-    '../../consumer-management/module',
+    '../../consumers.agentsoncloud.com/module',
     '../../facilities.agentsoncloud.com/module',
     '../../clinic.management.agentsoncloud.com/module',
   '../../inventory.agentsoncloud.com/module'],
