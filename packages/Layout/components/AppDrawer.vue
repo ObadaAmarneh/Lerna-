@@ -8,7 +8,7 @@
         <span class="hidden-sm-and-down">I Wish</span>
       </v-toolbar-title>
     </v-toolbar>
-    <VuePerfectScrollbar class="drawer-menu--scroll" :settings="scrollSettings">
+    <!-- <VuePerfectScrollbar class="drawer-menu--scroll" :settings="scrollSettings"> -->
 
     <v-list  expand>
       <template v-for="(item, i) in menus">
@@ -97,16 +97,14 @@
         </v-list-item>
       </template>
     </v-list>
-    </VuePerfectScrollbar>
+    <!-- </VuePerfectScrollbar> -->
   </v-navigation-drawer>
 </template>
 <script>
 import menu from "../static/menu";
-import VuePerfectScrollbar from 'vue-perfect-scrollbar';
 
 export default {
   name: "app-drawer",
-  components: {VuePerfectScrollbar},
   props: {
     expanded: {
       type: Boolean,
