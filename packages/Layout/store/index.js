@@ -8,6 +8,7 @@ import services from "../../consumers.agentsoncloud.com/store/modules/services";
 import inventory from '../../inventory.agentsoncloud.com/store/modules/inventory';
 import createAppointment from '../../clinic.management.agentsoncloud.com/store/modules/createappointment'
 import updateAppointment from '../../clinic.management.agentsoncloud.com/store/modules/updateappointment'
+import marketingStore from "../../marketing.agentsoncloud.com/store/modules/marketingStore"
 
 const createStore = () => {
   return new Vuex.Store({
@@ -20,7 +21,8 @@ const createStore = () => {
       blackListManegment,
       inventory,
       createAppointment,
-      updateAppointment
+      updateAppointment,
+      marketingStore
 
     },
   });

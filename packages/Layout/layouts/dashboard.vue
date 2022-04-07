@@ -13,6 +13,8 @@
             <nuxt />
           </div>
 
+
+
           <!-- App Footer -->
           <v-footer height="auto" class="white pa-3 app--footer">
             <img

@@ -11,7 +11,7 @@
     <v-toolbar class="drawer-color"  height="125%" dark>
       <img src="../static/Wish-Emblem.png" height="36" alt="Agents On Cloud">
       <v-toolbar-title class="ml-0 pl-3">
-        <span class="hidden-sm-and-down">Tasks here</span>
+        <span class="hidden-sm-and-down">Tasks here {{drawer}}</span>
       </v-toolbar-title>
     </v-toolbar>
    

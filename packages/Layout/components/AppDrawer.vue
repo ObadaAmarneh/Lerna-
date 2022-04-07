@@ -1,110 +1,123 @@
 <template>
-  <v-navigation-drawer 
+  <v-navigation-drawer
     :mini-variant.sync="mini"
-   id="appDrawer" fixed app v-model="drawer" width="260"  >
+    id="appDrawer"
+    fixed
+    app
+    v-model="drawer"
+    width="260"
+  >
     <v-toolbar class="drawer-color" height="125%" dark>
       <img src="../static/Wish-Emblem.png" height="36" alt="Agents On Cloud" />
       <v-toolbar-title class="ml-0 pl-3">
         <span class="hidden-sm-and-down">I Wish</span>
       </v-toolbar-title>
     </v-toolbar>
-    <!-- <VuePerfectScrollbar class="drawer-menu--scroll" :settings="scrollSettings"> -->
-
-    <v-list  expand>
-      <template v-for="(item, i) in menus">
-        <!--group with subitems-->
-        <v-list-group
-          v-if="item.items"
-          :key="item.name"
-          :group="item.group"
-          :prepend-icon="item.icon"
-          no-action="no-action"
-        >
-          <v-list-item slot="activator" ripple="ripple">
-            <v-list-item-content >
-              <v-list-item-title >{{ item.title }}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-          <template v-for="(subItem, i) in item.items">
-            <!--sub group-->
-            <v-list-group
-              v-if="subItem.items"
-              :key="subItem.name"
-              :group="subItem.group"
-              sub-group="sub-group"
-            >
-              <v-list-item slot="activator" ripple="ripple">
-                <v-list-item-content>
-                  <v-list-item-title>{{ subItem.title }}</v-list-item-title>
-                </v-list-item-content>
-              </v-list-item>
+    <vue-perfect-scrollbar
+      class="drawer-menu--scroll"
+      :settings="scrollSettings"
+    >
+      <v-list dense expand>
+        <template v-for="(item, i) in menus">
+          <!--group with subitems-->
+          <v-list-group
+            v-if="item.items"
+            :key="item.name"
+            :group="item.group"
+            :prepend-icon="item.icon"
+            no-action="no-action"
+          >
+            <v-list-item slot="activator" ripple="ripple">
+              <v-list-item-content>
+                <v-list-item-title>{{ item.title }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+            <template v-for="(subItem, i) in item.items">
+              <!--sub group-->
+              <v-list-group
+                v-if="subItem.items"
+                :key="subItem.name"
+                :group="subItem.group"
+                sub-group="sub-group"
+              >
+                <v-list-item slot="activator" ripple="ripple">
+                  <v-list-item-content>
+                    <v-list-item-title>{{ subItem.title }}</v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+                <v-list-item
+                  v-for="(grand, i) in subItem.children"
+                  :key="i"
+                  :to="grand.href ? grand.href : null"
+                  ripple="ripple"
+                >
+                  <v-list-item-content>
+                    <v-list-item-title>{{ grand.title }}</v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+              </v-list-group>
+              <!--child item-->
               <v-list-item
-                v-for="(grand, i) in subItem.children"
+                v-else
                 :key="i"
-                :to="grand.href ? grand.href : null"
+                :to="subItem.href ? subItem.href : null"
+                :disabled="subItem.disabled"
+                :target="subItem.target"
                 ripple="ripple"
               >
                 <v-list-item-content>
-                  <v-list-item-title>{{ grand.title }}</v-list-item-title>
+                  <v-list-item-title
+                    ><span>{{ subItem.title }}</span></v-list-item-title
+                  >
                 </v-list-item-content>
+                <v-list-item-action v-if="subItem.action">
+                  <v-icon :class="[subItem.actionClass || 'success--text']">{{
+                    subItem.action
+                  }}</v-icon>
+                </v-list-item-action>
               </v-list-item>
-            </v-list-group>
-            <!--child item-->
-            <v-list-item
-              v-else
-              :key="i"
-              :to="subItem.href ? subItem.href : null"
-              :disabled="subItem.disabled"
-              :target="subItem.target"
-              ripple="ripple"
-            >
-              <v-list-item-content>
-                <v-list-item-title
-                  ><span>{{ subItem.title }}</span></v-list-item-title
-                >
-              </v-list-item-content>
-              <v-list-item-action v-if="subItem.action">
-                <v-icon :class="[subItem.actionClass || 'success--text']">{{
-                  subItem.action
-                }}</v-icon>
-              </v-list-item-action>
-            </v-list-item>
-          </template>
-        </v-list-group>
-        <v-subheader v-else-if="item.header" :key="i">{{
-          item.header
-        }}</v-subheader>
-        <v-divider v-else-if="item.divider" :key="i"></v-divider>
-        <!--top-level link-->
-        <v-list-item
-          v-else
-          :to="item.href ? item.href : null"
-          ripple="ripple"
-          :disabled="item.disabled"
-          :target="item.target"
-          rel="noopener"
-          :key="item.name"
-        >
-          <v-list-item-action v-if="item.icon">
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-          <v-list-item-action v-if="item.subAction">
-            <v-icon class="success--text">{{ item.subAction }}</v-icon>
-          </v-list-item-action>
-        </v-list-item>
-      </template>
-    </v-list>
+            </template>
+          </v-list-group>
+          <v-subheader v-else-if="item.header" :key="i">{{
+            item.header
+          }}</v-subheader>
+          <v-divider v-else-if="item.divider" :key="i"></v-divider>
+          <!--top-level link-->
+          <v-list-item
+            v-else
+            :to="item.href ? item.href : null"
+            ripple="ripple"
+            :disabled="item.disabled"
+            :target="item.target"
+            rel="noopener"
+            :key="item.name"
+          >
+            <v-list-item-action v-if="item.icon">
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
+            <v-list-item-action v-if="item.subAction">
+              <v-icon class="success--text">{{ item.subAction }}</v-icon>
+            </v-list-item-action>
+          </v-list-item>
+        </template>
+      </v-list>
+    </vue-perfect-scrollbar>
+
     <!-- </VuePerfectScrollbar> -->
   </v-navigation-drawer>
 </template>
 <script>
 import menu from "../static/menu";
+import VuePerfectScrollbar from "vue-perfect-scrollbar";
 
 export default {
   name: "app-drawer",
+  components: {
+    VuePerfectScrollbar,
+  },
   props: {
     expanded: {
       type: Boolean,
@@ -148,19 +161,31 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="css" >
 /* use this if they asked you to add a scrollbar to the dashboard */
-
-
-.v-list-item--active{
-background: rgba(1, 255, 28, 0.23);
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(0px);
--webkit-backdrop-filter: blur(0px);
-border: 1px solid rgba(1, 255, 28, 0.3);
+.v-list-item--active {
+  border-width: 1px;
+  border-style: solid;
+  color: rgb(0, 255, 136);
+  padding: 5px 40px;
+  border-radius: 8px;
+  border-color: rgb(0, 255, 136);
 }
 .drawer-color {
   background-color: #1976d2 !important;
 }
 
+.v-navigation-drawer__content {
+  overflow-y: hidden;
+}
+
+/* light scroll bar  */
+
+#appDrawer {
+  overflow: hidden;
+}
+#appDrawer .drawer-menu--scroll {
+  height: calc(100vh - 48px);
+  overflow: auto;
+}
 </style>

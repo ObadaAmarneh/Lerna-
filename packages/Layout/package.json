@@ -30,6 +30,7 @@
     "vue-fullcalendar": "^1.0.9",
     "vue-quill-editor": "^3.0.6",
     "vue2-perfect-scrollbar": "^1.5.5",
+    "vue3-perfect-scrollbar": "^1.6.0",
     "vuelidate": "^0.7.7",
     "vuetify": "^2.6.1",
     "vuetify-loader": "^1.2.0"

@@ -1,6 +1,6 @@
 import colors from "vuetify/es5/util/colors";
 module.exports = {
-  ssr: true,
+  ssr: false,
   /*
    ** Headers of the page
    */
@@ -61,6 +61,55 @@ module.exports = {
       target: "https://api.consumers.agentsoncloud.com/",
       pathRewrite: { "^/consumer-management/": "" },
     },
+    '/appointment-management/': {
+      target: 'https://api.clinic.management.agentsoncloud.com/',
+      pathRewrite: { '^/appointment-management/': ""},
+    },
+    // '/inventory-management/': {
+    //   target: 'http://localhost:30182/',
+    //   pathRewrite: { '^/inventory-management/': '' },
+    // },
+
+
+
+
+    "/marketing/": {
+      target: "https://api.marketing.agentsoncloud.com/",
+      pathRewrite: { "^/marketing/": "" },
+    },
+    // marketing mock api's proxies 
+    
+    '/service-management/': {
+      // https://odd-goat-41.app.smartmock.io
+      // http://localhost:3500
+      target: "https://odd-goat-41.app.smartmock.io/servicesData",
+      pathRewrite: { "^/service-management/": "" },
+    },
+
+    '/consumer-management/': {
+      target: "https://odd-goat-41.app.smartmock.io/consumerData",
+      pathRewrite: { "^/consumer-management/": "" },
+    },
+
+    '/provider-management/': {
+      target: "https://odd-goat-41.app.smartmock.io/providerData",
+      pathRewrite: { "^/provider-management/": "" },
+    },
+
+    '/facilities-management/': {
+      target: "https://odd-goat-41.app.smartmock.io/facilitiesData",
+      pathRewrite: { "^/facilities-management/": "" },
+    },
+
+    '/items-management/': {
+      target: "https://odd-goat-41.app.smartmock.io/itemsData",
+      pathRewrite: { "^/items-management/": "" },
+    },
+
+    '/gallery-management/': {
+      target: "https://6224b0846c0e396620444aef.mockapi.io/marketing/GalleryImages",
+      pathRewrite: { "^/gallery-management/": "" },
+    },
   },
   /*
    ** Customize the progress-bar color
@@ -105,7 +154,9 @@ module.exports = {
     '../../consumers.agentsoncloud.com/module',
     '../../facilities.agentsoncloud.com/module',
     '../../clinic.management.agentsoncloud.com/module',
-  '../../inventory.agentsoncloud.com/module'],
+  '../../inventory.agentsoncloud.com/module',
+  '../../marketing.agentsoncloud.com/module',
+],
   components: true,
   /*
    ** Build configuration

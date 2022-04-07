@@ -32,7 +32,7 @@
      <AppBell/>
 
     <!-- //App Bell -->
-   <v-app-bar-nav-icon @click.stop="toggleTasksDrawer()"></v-app-bar-nav-icon>
+   <v-app-bar-nav-icon @click.stop="toggleTasksDrawer"></v-app-bar-nav-icon>
 
 <!-- use v-slot here -->
     <v-menu offset-y origin="center center" :nudge-right="140" :nudge-bottom="10" transition="scale-transition">
