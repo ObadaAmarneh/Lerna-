@@ -17,3 +17,9 @@
 [submodule "packages/consumers.agentsoncloud.com"]
 	path = packages/consumers.agentsoncloud.com
 	url = https://github.com/agents-on-cloud/consumers.agentsoncloud.com.git
+[submodule "packages/marketing.agentsoncloud.com"]
+	path = packages/marketing.agentsoncloud.com
+	url = https://github.com/agents-on-cloud/marketing.agentsoncloud.com.git
+[submodule "packages/performance.agentsoncloud.com"]
+	path = packages/performance.agentsoncloud.com
+	url = https://github.com/agents-on-cloud/performance.agentsoncloud.com.git
