@@ -9,6 +9,9 @@ import inventory from '../../inventory.agentsoncloud.com/store/modules/inventory
 import createAppointment from '../../clinic.management.agentsoncloud.com/store/modules/createappointment'
 import updateAppointment from '../../clinic.management.agentsoncloud.com/store/modules/updateappointment'
 import marketingStore from "../../marketing.agentsoncloud.com/store/modules/marketingStore"
+import knowledgeBaseStore from "../../knowledgebase.agentsoncloud.com/store/modules/knowledgeBaseStore"
+import providerStore from "../../providers.agentsoncloud.com/store/modules/providers"
+import {reviews as performanceStore} from "../../performance.agentsoncloud.com/store/modules/reviews"
 
 const createStore = () => {
   return new Vuex.Store({
@@ -22,7 +25,10 @@ const createStore = () => {
       inventory,
       createAppointment,
       updateAppointment,
-      marketingStore
+      marketingStore,
+      performanceStore,
+      knowledgeBaseStore,
+      providerStore
 
     },
   });

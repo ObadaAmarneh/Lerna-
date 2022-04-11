@@ -1,6 +1,9 @@
 import colors from "vuetify/es5/util/colors";
+// to increase event buffer
+require('events').EventEmitter.defaultMaxListeners = 50; 
 module.exports = {
   ssr: false,
+  
   /*
    ** Headers of the page
    */
@@ -110,6 +113,36 @@ module.exports = {
       target: "https://6224b0846c0e396620444aef.mockapi.io/marketing/GalleryImages",
       pathRewrite: { "^/gallery-management/": "" },
     },
+
+    "/backend/": {
+      target: "http://localhost:3000/api/v1/",
+      pathRewrite: { "^/backend/": "" },
+    },
+    '/billing-Management/': { target: 'http://localhost:30162', pathRewrite: {'^/billing-Management/': ''} },
+    "/providers/": {
+      target: "https://api.providers.agentsoncloud.com/",
+      pathRewrite: { "^/providers/": "" },
+    },
+
+    //knowldge base proxy
+
+    "/inventory-management/": {
+      target: "https://621f582dce99a7de193872cd.mockapi.io/",
+      pathRewrite: { "^/inventory-management/": "" },
+    },
+    "/services-management/": {
+      target: "https://621f582dce99a7de193872cd.mockapi.io/",
+      pathRewrite: { "^/services-management/": "" },
+    },
+    "/equipments-management/": {
+      target: "https://621f582dce99a7de193872cd.mockapi.io/",
+      pathRewrite: { "^/equipments-management/": "" },
+    },
+
+    "/knowledgebase/": {
+      target: "https://api.knowledgebase.agentsoncloud.com/",
+      pathRewrite: { "^/knowledgebase/": "" },
+    },
   },
   /*
    ** Customize the progress-bar color
@@ -119,7 +152,7 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css' ,   "vue2-timepicker/dist/VueTimepicker.css"],
+  css: [ '@/assets/css/main.css',],
 
   /*
    ** Plugins to load before mounting the App
@@ -133,6 +166,7 @@ module.exports = {
   vuetify: {
     theme: {
       dark: false,
+      treeShake: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -156,6 +190,10 @@ module.exports = {
     '../../clinic.management.agentsoncloud.com/module',
   '../../inventory.agentsoncloud.com/module',
   '../../marketing.agentsoncloud.com/module',
+  '../../billing.agentsoncloud.com/module',
+  '../../performance.agentsoncloud.com/module',
+  '../../knowledgebase.agentsoncloud.com/module',
+  '../../providers.agentsoncloud.com/module',
 ],
   components: true,
   /*
@@ -166,9 +204,17 @@ module.exports = {
   },
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    ['@nuxtjs/vuetify', {treeShake: false}]
+    ['@nuxtjs/vuetify', {treeShake: false}],
+    '@nuxt/postcss8',
   ],
   build: {
+    
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },  
     /*
      ** You can extend webpack config here
      */
