@@ -49,7 +49,6 @@
         password: 'password'
       }
     }),
-
     methods: {
       login() {
         this.loading = true;
@@ -58,7 +57,6 @@
         }, 1000);
       }
     }
-
   };
 </script>
 <style scoped lang="css">

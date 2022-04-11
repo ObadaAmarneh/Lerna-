@@ -8,7 +8,7 @@
     width="260"
   >
     <v-toolbar class="drawer-color" height="125%" dark>
-      <img src="../static/Wish-Emblem.png" height="36" alt="Agents On Cloud" />
+      <img  class= "logo" src="../static/Wish-Emblem.png" height="60" width="80" alt="Agents On Cloud" />
       <v-toolbar-title class="ml-0 pl-3">
         <span class="hidden-sm-and-down">I Wish</span>
       </v-toolbar-title>
@@ -167,7 +167,6 @@ export default {
   border-width: 1px;
   border-style: solid;
   color: rgb(0, 255, 136);
-  padding: 5px 40px;
   border-radius: 8px;
   border-color: rgb(0, 255, 136);
 }
@@ -187,5 +186,9 @@ export default {
 #appDrawer .drawer-menu--scroll {
   height: calc(100vh - 48px);
   overflow: auto;
+}
+.logo{
+  height:"40%"; 
+  width:"40%"; 
 }
 </style>

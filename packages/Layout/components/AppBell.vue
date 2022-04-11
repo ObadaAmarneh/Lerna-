@@ -29,7 +29,7 @@
           <Form></Form>
         </v-list-item-action>
         <v-btn to="/notificationSettings" class="mx-1" dense small light fab>
-          <v-icon> mdi-login-variant </v-icon>
+          <v-icon color="info"> mdi-login-variant </v-icon>
         </v-btn>
       </v-list-item>
       <v-spacer></v-spacer>
@@ -89,11 +89,12 @@
           </v-list>
         </template>
       </v-virtual-scroll>
-      <v-btn color="info" text>
+      <v-btn color="info" class="showAll" text>
         <NuxtLink style="text-decoration: none; color: inherit" to="/Received"
           >Show All</NuxtLink
         >
       </v-btn>
+      
     </v-list>
     <v-divider />
     
@@ -210,6 +211,9 @@ export default {
 .bg-active{
    background-color: black;
   color : white !important;
+}
+.showAll{
+  margin-left: 9rem
 }
 
 </style>

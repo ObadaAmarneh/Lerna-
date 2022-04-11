@@ -8,13 +8,9 @@
         <v-main>
           <!-- Page Header -->
           <page-header></page-header>
-
           <div class="page-wrapper">
             <nuxt />
           </div>
-
-
-
           <!-- App Footer -->
           <v-footer height="auto" class="white pa-3 app--footer">
             <img
@@ -26,28 +22,15 @@
             <span class="caption"
               >Agents On Cloud &copy; {{ new Date().getFullYear() }}</span
             >
-
             <v-spacer></v-spacer>
           </v-footer>
           <TheLayoutToTopFab></TheLayoutToTopFab>
         </v-main>
         <!-- Go to top -->
-
         <!-- theme setting -->
 
-        <v-navigation-drawer
-          class="setting-drawer"
-          temporary
-          right
-          v-model="rightDrawer"
-          hide-overlay
-          fixed
-        >
-          <theme-settings></theme-settings>
-        </v-navigation-drawer>
       </v-app>
     </template>
-
     <v-snackbar
       :timeout="3000"
       bottom
@@ -62,7 +45,6 @@
     </v-snackbar>
   </div>
 </template>
-
 <script>
 import TheLayoutToTopFab from "../components/TheLayoutToTopFab.vue";
 import AppDrawer from "../components/AppDrawer.vue";
@@ -92,7 +74,6 @@ export default {
       color: "",
     },
   }),
-
   methods: {
     ...mapActions(["setSingleNotification"]),
     openThemeSettings() {
@@ -144,9 +125,8 @@ export default {
 }
 
 html {
-overflow-y: auto 
+  overflow-y: auto;
 }
-
 html::-webkit-scrollbar {
   width: 0;
   height: 0;

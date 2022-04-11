@@ -1,5 +1,4 @@
 <template>
-
   <v-navigation-drawer
     id="tasksDrawer"
     fixed
@@ -8,13 +7,12 @@
     v-model="drawer"
     width="260"
   >
-    <v-toolbar class="drawer-color"  height="125%" dark>
-      <img src="../static/Wish-Emblem.png" height="36" alt="Agents On Cloud">
+     <v-toolbar class="drawer-color" height="125%" dark>
+      <img  class= "logo" src="../static/Wish-Emblem.png" height="60" width="80" alt="Agents On Cloud" />
       <v-toolbar-title class="ml-0 pl-3">
-        <span class="hidden-sm-and-down">Tasks here {{drawer}}</span>
+        <span class="hidden-sm-and-down">I Wish</span>
       </v-toolbar-title>
     </v-toolbar>
-   
       <v-list dense expand>
         <template v-for="(item, i) in menus">
           <!--group with subitems-->
@@ -70,11 +68,9 @@
         </template>
       </v-list>
   </v-navigation-drawer>
-
 </template>
 <script>
   import taskMenu from '../static/taskMenu';
-
   export default {
     name: 'app-drawer',
     components: {
@@ -137,6 +133,4 @@
 .drawer-color{
 background-color:#1976D2!important
 }
-
-
 </style>

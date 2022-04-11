@@ -26,10 +26,16 @@
     <v-btn icon @click="handleFullScreen()">
       <v-icon>mdi-fullscreen  </v-icon>
     </v-btn>
-    
-
-
      <AppBell/>
+     <!-- move this to a component -->
+         <v-btn icon @click="handleFullScreen()">
+     <v-icon>mdi-checkbox-blank-outline</v-icon>
+ 
+    </v-btn>
+          <v-btn icon @click="handleFullScreen()">
+       <v-icon>mdi-checkbox-blank-outline</v-icon>
+    </v-btn>
+   
 
     <!-- //App Bell -->
    <v-app-bar-nav-icon @click.stop="toggleTasksDrawer"></v-app-bar-nav-icon>
