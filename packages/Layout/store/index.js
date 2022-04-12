@@ -12,7 +12,13 @@ import marketingStore from "../../marketing.agentsoncloud.com/store/modules/mark
 import knowledgeBaseStore from "../../knowledgebase.agentsoncloud.com/store/modules/knowledgeBaseStore"
 import providerStore from "../../providers.agentsoncloud.com/store/modules/providers"
 import {reviews as performanceStore} from "../../performance.agentsoncloud.com/store/modules/reviews"
-
+import incident from "../../incidents.agentsoncloud.com/store/modules/incident";
+import impactedIssue from "../../incidents.agentsoncloud.com/store/modules/impactedIsssue";
+import attachment from "../../incidents.agentsoncloud.com/store/modules/attachment";
+import responder from "../../incidents.agentsoncloud.com/store/modules/responder";
+import comment from "../../incidents.agentsoncloud.com/store/modules/comment";
+import creator from "../../incidents.agentsoncloud.com/store/modules/creator";
+import activityLog from "../../incidents.agentsoncloud.com/store/modules/activityLog";
 const createStore = () => {
   return new Vuex.Store({
     modules: {
@@ -28,7 +34,14 @@ const createStore = () => {
       marketingStore,
       performanceStore,
       knowledgeBaseStore,
-      providerStore
+      providerStore,
+      incident,
+      impactedIssue,
+      attachment,
+      responder,
+      comment,
+      creator,
+      activityLog,
 
     },
   });

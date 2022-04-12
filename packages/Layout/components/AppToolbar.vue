@@ -29,11 +29,14 @@
      <AppBell/>
      <!-- move this to a component -->
          <v-btn icon @click="handleFullScreen()">
-     <v-icon>mdi-checkbox-blank-outline</v-icon>
+     <v-icon>mdi-calendar-check</v-icon>
  
     </v-btn>
           <v-btn icon @click="handleFullScreen()">
-       <v-icon>mdi-checkbox-blank-outline</v-icon>
+       <v-icon>mdi-calendar-text</v-icon>
+    </v-btn>
+          <v-btn icon @click="handleFullScreen()">
+       <v-icon>mdi-alert-outline</v-icon>
     </v-btn>
    
 
