@@ -4,7 +4,7 @@
       <v-container fluid fill-height>
         <v-layout align-center justify-center>
           <v-flex xs12 sm8 md4 lg4>
-            <v-card class="pa-3"  elevation="12"
+            <v-card class="pa-3"  elevation="12" width="100%"
   outlined>
               <v-card-text>
                 <div class="layout column align-center">

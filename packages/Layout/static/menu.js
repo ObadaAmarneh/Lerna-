@@ -4,8 +4,8 @@ const Menu = [
       title: 'Home',
       group: 'Main',
       icon: 'mdi-home-outline',
-      name: 'Dashboard',
-      href: '/dashboard'
+      name: 'Clinic',
+      href: '/Clinic'
     },
     {
       title: 'Appointments',
@@ -36,13 +36,7 @@ const Menu = [
       icon: 'mdi-cube-outline',
       href: '/Inventory'
     },
-    {
-      title: 'Clinic',
-      group: 'Main',
-      icon: 'mdi-hospital-building',
-      name: 'Clinic',
-      href: '/Clinic'
-    },
+    
     {
       title: 'Billing',
       group: 'Main',

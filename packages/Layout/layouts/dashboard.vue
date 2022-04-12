@@ -12,22 +12,13 @@
             <nuxt />
           </div>
           <!-- App Footer -->
-          <v-footer height="auto" class="white pa-3 app--footer">
-            <img
-              class="ml-2"
-              width="40"
-              height="40"
-              src="../assets/Img/94598985.jpg"
-            />
-            <span class="caption"
-              >Agents On Cloud &copy; {{ new Date().getFullYear() }}</span
-            >
-            <v-spacer></v-spacer>
-          </v-footer>
+         
           <TheLayoutToTopFab></TheLayoutToTopFab>
         </v-main>
+                    <Footer></Footer>
         <!-- Go to top -->
         <!-- theme setting -->
+
 
       </v-app>
     </template>
@@ -46,6 +37,7 @@
   </div>
 </template>
 <script>
+import Footer from '../components/Footer.vue'
 import TheLayoutToTopFab from "../components/TheLayoutToTopFab.vue";
 import AppDrawer from "../components/AppDrawer.vue";
 import TasksDrawer from "../components/TasksDrawer";
@@ -109,20 +101,20 @@ export default {
 </script>
 
 <style lang="scss" >
+.container {
+  border: none;
+}
 .setting-fab {
   top: 50% !important;
   right: 0;
   border-radius: 0;
 }
-.page-wrapper {
+.page-wrapper .container {
   height: 100% !important;
   margin-bottom: 50px;
+  border: none
 }
-.app--footer {
-  position: fixed !important;
-  bottom: 0;
-  width: 100%;
-}
+
 
 html {
   overflow-y: auto;

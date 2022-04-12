@@ -42,17 +42,20 @@
               >
                 <v-list-item slot="activator" ripple="ripple">
                   <v-list-item-content>
-                    <v-list-item-title>{{ subItem.title }}</v-list-item-title>
+                    <v-list-item-title >{{ subItem.title }}</v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
                 <v-list-item
                   v-for="(grand, i) in subItem.children"
                   :key="i"
                   :to="grand.href ? grand.href : null"
+            @click="drawer = false"
+
                   ripple="ripple"
+
                 >
                   <v-list-item-content>
-                    <v-list-item-title>{{ grand.title }}</v-list-item-title>
+                    <v-list-item-title >{{ grand.title }}</v-list-item-title>
                   </v-list-item-content>
                 </v-list-item>
               </v-list-group>
@@ -60,13 +63,16 @@
               <v-list-item
                 v-else
                 :key="i"
+            @click="drawer = false"
+
                 :to="subItem.href ? subItem.href : null"
                 :disabled="subItem.disabled"
                 :target="subItem.target"
                 ripple="ripple"
+
               >
                 <v-list-item-content>
-                  <v-list-item-title
+                  <v-list-item-title 
                     ><span>{{ subItem.title }}</span></v-list-item-title
                   >
                 </v-list-item-content>
@@ -88,6 +94,8 @@
             :to="item.href ? item.href : null"
             ripple="ripple"
             :disabled="item.disabled"
+            @click="drawer = false"
+
             :target="item.target"
             rel="noopener"
             :key="item.name"

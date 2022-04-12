@@ -115,7 +115,7 @@ module.exports = {
     },
 
     "/backend/": {
-      target: "http://localhost:3000/api/v1/",
+      target: "https://api.performance.agentsoncloud.com/api/v1",
       pathRewrite: { "^/backend/": "" },
     },
     '/billing-Management/': { target: 'http://localhost:30162', pathRewrite: {'^/billing-Management/': ''} },
@@ -142,6 +142,29 @@ module.exports = {
     "/knowledgebase/": {
       target: "https://api.knowledgebase.agentsoncloud.com/",
       pathRewrite: { "^/knowledgebase/": "" },
+    },
+
+
+    // incindets 
+    "/incident-management/": {
+      target: "https://api.incidents.agentsoncloud.com/",
+      pathRewrite: { "^/incident-management/": "" },
+    },
+    "/user-management/": {
+      target: "https://62270c622dfa52401812e5c0.mockapi.io",
+      pathRewrite: { "^/user-management/": "" },
+    },
+    "/inventory-management/": {
+      target: "https://62270c622dfa52401812e5c0.mockapi.io",
+      pathRewrite: { "^/inventory-management/": "" },
+    },
+    "/facility-management/": {
+      target: "https://62270c622dfa52401812e5c0.mockapi.io",
+      pathRewrite: { "^/facility-management/": "" },
+    },
+    "/suppliers-management/": {
+      target: "https://62270c622dfa52401812e5c0.mockapi.io",
+      pathRewrite: { "^/suppliers-management/": "" },
     },
   },
   /*
@@ -184,16 +207,17 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    "../../notifications.agentsoncloud.com/module", "@nuxtjs/axios",
-    '../../consumers.agentsoncloud.com/module',
-    '../../facilities.agentsoncloud.com/module',
-    '../../clinic.management.agentsoncloud.com/module',
-  '../../inventory.agentsoncloud.com/module',
-  '../../marketing.agentsoncloud.com/module',
-  '../../billing.agentsoncloud.com/module',
-  '../../performance.agentsoncloud.com/module',
-  '../../knowledgebase.agentsoncloud.com/module',
-  '../../providers.agentsoncloud.com/module',
+    "../notifications.agentsoncloud.com/module", "@nuxtjs/axios",
+    '../consumers.agentsoncloud.com/module',
+    '../facilities.agentsoncloud.com/module',
+    '../clinic.management.agentsoncloud.com/module',
+  '../inventory.agentsoncloud.com/module',
+  '../marketing.agentsoncloud.com/module',
+  '../billing.agentsoncloud.com/module',
+  '../performance.agentsoncloud.com/module',
+  '../knowledgebase.agentsoncloud.com/module',
+  '../providers.agentsoncloud.com/module',
+  '../incidents.agentsoncloud.com/module'
 ],
   components: true,
   /*
