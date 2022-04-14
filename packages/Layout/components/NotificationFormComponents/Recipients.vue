@@ -31,7 +31,6 @@
             <v-text-field
               dense
               solo
-              clearable
               v-model="searchTerm"
               placeholder="Search"
               @input="searchUsers"

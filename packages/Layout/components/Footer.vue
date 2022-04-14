@@ -16,6 +16,7 @@
           :key="icon"
           class="mx-4 white--text"
           icon
+          to= "/Clinic"
         >
           <v-icon size="24px">
             {{ icon }}
@@ -24,13 +25,15 @@
       </v-card-text>
 
       <v-card-text class="white--text pt-0">
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+       Agents On Cloud ' started this year, our company's mission, background,products,are growing up, we  manage to pull off all what you need Agents on Cloud 
+       "Always deliver more than expected".~ 
+
+      example text field here we can write  
       </v-card-text>
 
       <v-divider></v-divider>
 
-      <v-card-text class="white--text">
-          
+      <v-card-text class="white--text">          
           Agents On Cloud &copy; {{ new Date().getFullYear() }}
           </v-card-text>
          
@@ -49,6 +52,11 @@
         'mdi-home',
         'mdi-email',
         'mdi-phone',
+      ],
+      path:[
+        '/',
+        '/',
+        '/',
       ],
       items: [
         'default',

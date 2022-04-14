@@ -30,7 +30,8 @@
         </v-toolbar>
         <form>
           <v-container fluid>
-            <v-icon>mdi-bell-plus</v-icon>
+            <v-icon>mdi-bell-plus
+            </v-icon>
             <h1>Create a new notification</h1>
 
             <v-row class="mb-6" no-gutters>

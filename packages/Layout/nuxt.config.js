@@ -17,7 +17,7 @@ module.exports = {
         name: "description",
         content:
           "I wish system \n" +
-          "  Designed and developed by Agent on Cloud Team =) .",
+          "  Designed and developed by Agents on Cloud Team =) .",
       },
     ],
     link: [

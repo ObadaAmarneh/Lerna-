@@ -25,7 +25,7 @@ const notifications = {
         dialog: false,
         sentNotifications: [],
         deletedNotifications: [],
-        messages: 0,
+        messages: 2,
         checked: [],
         settingsAlert: false
     },
@@ -142,8 +142,10 @@ const notifications = {
             commit("setNotifications", notifications);
           },
           setSingleNotification({ commit }, notifications) {
-        
-            commit("mutateSingleNotification", notifications);
+            if (!notifications.includes(this.notifications)) {
+              
+              commit("mutateSingleNotification", notifications);
+            }
           },
           setFormFlag({ commit }) {
             commit("mutateFormFlag");
@@ -164,6 +166,7 @@ const notifications = {
             return state.checked
           },
           getNumberOfNotification(state) {
+    
             return state.messages
           },
           getAllDeletedNotifications(state) {
