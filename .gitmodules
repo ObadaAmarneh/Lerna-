@@ -24,9 +24,6 @@
 [submodule "packages/performance.agentsoncloud.com"]
 	path = packages/performance.agentsoncloud.com
 	url = https://github.com/agents-on-cloud/performance.agentsoncloud.com.git
-[submodule "packages/billing.agentsoncloud.com"]
-	path = packages/billing.agentsoncloud.com
-	url = https://github.com/agents-on-cloud/billing.agentsoncloud.com.git
 [submodule "packages/knowledgebase.agentsoncloud.com"]
 	path = packages/knowledgebase.agentsoncloud.com
 	url = https://github.com/agents-on-cloud/knowledgebase.agentsoncloud.com.git
