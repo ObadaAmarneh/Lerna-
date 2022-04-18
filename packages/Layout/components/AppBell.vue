@@ -8,6 +8,7 @@
     z-index="10"
   >
     <template v-slot:activator="{ on }">
+      <v-btn @click="testerrr()"> click me </v-btn>
       <v-btn icon text v-on="on" @click="restCounter">
         <v-badge
           :content="getNotificationCount"
@@ -20,72 +21,81 @@
         </v-badge>
       </v-btn>
     </template>
-    <v-list class="pa-0" two-line subheader >
-
-      <v-list-item >
+    <v-list class="pa-0" two-line subheader>
+      <v-list-item>
         <v-subheader>Notifications</v-subheader>
         <v-spacer></v-spacer>
         <v-list-item-action>
           <Form></Form>
         </v-list-item-action>
-        <v-btn to="/notificationSettings" class="mx-1" dense small light fab>
-          <v-icon color="info"> mdi-login-variant </v-icon>
-        </v-btn>
+          <v-icon class="cursor mr-2"  to="/notificationSettings" color="grey lighten-1"> mdi-wechat </v-icon>
+          <v-icon class="cursor"  to="/notificationSettings" color="grey lighten-1"> mdi-login-variant </v-icon>
       </v-list-item>
       <v-spacer></v-spacer>
       <v-divider />
       <!--<v-divider inset/>-->
       <!--<v-subheader inset>Files</v-subheader>-->
-      <v-virtual-scroll :items="notifications" height="300" item-height="70" >
-        <template v-slot:default="{ item }" active-class="bg-active">
+      <v-virtual-scroll :items="notifications" height="500" item-height="100">
+        <template v-slot:default="{ item }" >
           <v-list>
-      <v-list-item-group  active-class="bg-active">
-          <v-list-item :key="item" avatar @click="1" min="0" max="3" > 
-            <v-list-item-avatar>
-              <!-- [item.iconClass] -->
-              <v-avatar dense>
-                <img
-                  src="https://cdn.vuetifyjs.com/images/john.jpg"
-                  alt="John"
-                />
-              </v-avatar>
-            </v-list-item-avatar>
-            <v-list-item-content
-              @click.prevent.stop="notificationContent(item)"
-              v-on="!on" 
-            >
-              <h6 default class="caption">
-                {{ item.notification_subject }}
-                <span class="spanDate">{{
-                  notificationDate(item.createdAt)
-                }}</span>
-              </h6>
+            <v-list-item-group >
+              
+              <v-list-item  height= "100" :key="item" avatar @click="1" min="0" max="4" class="unread">
+  
+                <v-list-item-avatar class="mr-4">
+                  <!-- [item.iconClass] -->
+                  <v-avatar  dense>
+                    <img
+                      src="https://cdn.vuetifyjs.com/images/john.jpg"
+                      alt="John"
 
-              <v-list-item-subtitle>
-                {{ item.notification_description }}
-                ...</v-list-item-subtitle
-              >
-            </v-list-item-content>
+                    />
+                  </v-avatar>
+                </v-list-item-avatar>
+     
+                <v-list-item-content
+                  @click.prevent.stop="notificationContent(item)"
+                >
 
-            <v-list-item-action>
-              <v-menu transition="slide-y-transition" bottom>
-                <template v-slot:activator="{ on, attrs }">
-                  <v-icon
-                    @click.prevent.stop="toggleDots(item)"
-                    class="dots-position"
-                    v-bind="attrs"
-                    v-on="on"
+                  <h1 default class="caption">
+                    {{ limiter(item.notification_subject) }}
+                    {{item.is_unread}}
+                   
+                  </h1>
+                  
+                   <span class="spanDate">{{
+                      notificationDate(item.createdAt)
+                    }}</span>
+                  <v-list-item-subtitle>
+        
+                    {{ item.notification_description }}
+                    ...</v-list-item-subtitle
                   >
-                    mdi-dots-vertical
-                  </v-icon>
-                </template>
-              <Ellipsis :selected="selected"></Ellipsis>
-                
-              </v-menu>
-            </v-list-item-action>
-          </v-list-item>
-          <v-divider></v-divider>
-      </v-list-item-group>
+                </v-list-item-content>
+                            <v-list-item-action>
+     <v-icon small :color="item.is_unread  ? 'info' : 'grey lighten-1'">
+     mdi-image-filter-tilt-shift        
+     </v-icon>
+   </v-list-item-action>
+                <v-list-item-action>
+                  <v-menu transition="slide-y-transition" bottom>
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-icon
+                        @click.prevent.stop="toggleDots(item)"
+                        class="dots-position"
+                        v-bind="attrs"
+                        v-on="on"
+                      >
+                        mdi-dots-vertical
+                      </v-icon>
+                    </template>
+                    
+                    <Ellipsis :selected="selected"></Ellipsis>
+                  </v-menu>
+                </v-list-item-action>
+              </v-list-item>
+              <v-divider></v-divider>
+            </v-list-item-group>
           </v-list>
         </template>
       </v-virtual-scroll>
@@ -94,10 +104,8 @@
           >Show All</NuxtLink
         >
       </v-btn>
-      
     </v-list>
     <v-divider />
-    
 
     <div v-if="getDialog">
       <NotificationDetails></NotificationDetails>
@@ -123,6 +131,8 @@ export default {
     // this.socket();
   },
   computed: {
+    // we can use here map getter and use the value form the store directly so we dont need to use each time this.store.getters  
+
     showForm() {
       this.setFormFlag();
     },
@@ -150,7 +160,19 @@ export default {
 
   methods: {
     ...mapActions(["getNotifications", "setFormFlag"]),
+    testerrr() {
+      console.log("Hooon ", this.notifications);
+    },
+    limiter(notificationSubject) {
+      if (notificationSubject.length > 20) {
+        return (notificationSubject = notificationSubject.substring(0, 34));
+      } else {
+        return notificationSubject;
+      }
+    },
     restCounter() {
+      console.log('force update');
+      this.$forceUpdate();
       this.$store.commit("updateNotificationCounter");
       this.getNotificationCount;
     },
@@ -163,6 +185,11 @@ export default {
       this.messages = 0;
     },
     notificationContent(notificationDetails) {
+      
+      console.log('clicking the notifcation here is the notifcaiton deatils ',notificationDetails );
+      //TODO we need to make a request to the backend to change the is_unread status of
+      //TODO we need to the value from the backend and do a if rendering condition in order to render the unread notification for the second time   
+      this.$store.dispatch("changeNotificationStatus" , notificationDetails.id)
       this.$store.dispatch("getNotificationDetails", notificationDetails);
       this.$router.push({ path: "Details" });
     },
@@ -178,6 +205,13 @@ export default {
 };
 </script>
 <style scoped>
+.unread{
+
+  
+}
+.cursor{
+  cursor: pointer;
+}
 .menuable__content__active {
   width: 400px;
 }
@@ -208,12 +242,8 @@ export default {
 .notification-subject {
   font-size: 13px !important;
 }
-.bg-active{
-   background-color: black;
-  color : white !important;
-}
-.showAll{
-  margin-left: 9rem
-}
 
+.showAll {
+  margin-left: 9rem;
+}
 </style>

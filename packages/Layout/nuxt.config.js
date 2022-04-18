@@ -57,7 +57,7 @@ module.exports = {
   },
   proxy: {
     "/notification-management/": {
-      target: "https://api.notifications.agentsoncloud.com/",
+      target: "http://localhost:30192/",
       pathRewrite: { "^/notification-management/": "" },
     },
     "/consumer-management/": {

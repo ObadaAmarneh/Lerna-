@@ -2,17 +2,11 @@
   <v-row justify="center">
     <v-dialog v-model="dialog" persistent max-width="1000px">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn
-          v-bind="attrs"
+       
+          <v-icon      v-bind="attrs"
           v-on="on"
           class="mr-4"
-          small
-          light
-          fab
-          @click="clear"
-        >
-          <v-icon color="info" dense> mdi-plus </v-icon>
-        </v-btn>
+          @click="clear" color="grey lighten-1" dense> mdi-bell-plus </v-icon>
       </template>
     
 

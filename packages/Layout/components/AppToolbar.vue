@@ -26,7 +26,7 @@
     <v-btn icon @click="handleFullScreen()">
       <v-icon>mdi-fullscreen  </v-icon>
     </v-btn>
-     <AppBell/>
+     <AppBell />
      <!-- move this to a component -->
          <v-btn icon @click="handleFullScreen()">
      <v-icon>mdi-calendar-check</v-icon>
@@ -112,6 +112,7 @@
     },
     },
     methods: {
+    
       toggleDrawer() {
         this.$store.commit('toggleDrawer')
       },
