@@ -33,3 +33,6 @@
 [submodule "packages/incidents.agentsoncloud.com"]
 	path = packages/incidents.agentsoncloud.com
 	url = https://github.com/agents-on-cloud/incidents.agentsoncloud.com.git
+[submodule "packages/billing.agentsoncloud.com"]
+	path = packages/billing.agentsoncloud.com
+	url = https://github.com/agents-on-cloud/billing.agentsoncloud.com.git
