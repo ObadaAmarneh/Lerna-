@@ -78,7 +78,7 @@ export default {
   },
   mounted() {
     console.log("Socket On");
-    const socket = io.connect("http://localhost:30192/", {
+    const socket = io.connect("https://api.notifications.agentsoncloud.com/", {
       cors: {
         origin: "*",
       },
