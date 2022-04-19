@@ -2,10 +2,11 @@
   <div id="appRoot">
     <template>
       <v-app id="inspire" class="app">
+        <OurDoctors></OurDoctors>
         <app-drawer class="app--drawer"></app-drawer>
         <TasksDrawer class="app--drawer"></TasksDrawer>
-        <app-toolbar class="app--toolbar"></app-toolbar>
-        <v-main>
+                <app-toolbar class="app--toolbar"></app-toolbar>
+        <v-main class="mb-15">
           <!-- Page Header -->
           <page-header></page-header>
           <div class="page-wrapper">
@@ -38,6 +39,7 @@
 </template>
 <script>
 import Footer from '../components/Footer.vue'
+import OurDoctors from '../components/NavBar/OurDoctors.vue'
 import TheLayoutToTopFab from "../components/TheLayoutToTopFab.vue";
 import AppDrawer from "../components/AppDrawer.vue";
 import TasksDrawer from "../components/TasksDrawer";
@@ -49,6 +51,7 @@ import ThemeSettings from "../components/ThemeSettings";
 const { io } = require("socket.io-client");
 export default {
   components: {
+    OurDoctors,
     TheLayoutToTopFab,
     AppDrawer,
     AppToolbar,

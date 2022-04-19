@@ -189,6 +189,7 @@ export default {
       console.log('clicking the notifcation here is the notifcaiton deatils ',notificationDetails );
       //TODO we need to make a request to the backend to change the is_unread status of
       //TODO we need to the value from the backend and do a if rendering condition in order to render the unread notification for the second time   
+      console.log('notifcation id ', notificationDetails.id);
       this.$store.dispatch("changeNotificationStatus" , notificationDetails.id)
       this.$store.dispatch("getNotificationDetails", notificationDetails);
       this.$router.push({ path: "Details" });

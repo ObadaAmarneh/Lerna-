@@ -112,7 +112,6 @@
     },
     },
     methods: {
-    
       toggleDrawer() {
         this.$store.commit('toggleDrawer')
       },
