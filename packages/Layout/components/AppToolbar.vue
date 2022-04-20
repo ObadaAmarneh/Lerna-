@@ -23,11 +23,7 @@
     >
     </v-text-field> -->
     <v-spacer></v-spacer>
-    <v-btn icon @click="handleFullScreen()">
-      <v-icon>mdi-fullscreen  </v-icon>
-    </v-btn>     <AppBell />
-     <!-- move this to a component -->
-         <v-btn icon @click="handleFullScreen()">
+           <v-btn icon @click="handleFullScreen()">
      <v-icon>mdi-calendar-check</v-icon>
  
     </v-btn>
@@ -37,10 +33,15 @@
           <v-btn icon @click="handleFullScreen()">
        <v-icon>mdi-alert-outline</v-icon>
     </v-btn>
+     <AppBell />
+    <v-btn icon @click="handleFullScreen()">
+      <v-icon>mdi-fullscreen  </v-icon>
+    </v-btn>    
+     <!-- move this to a component -->
+  
    
 
     <!-- //App Bell -->
-   <v-app-bar-nav-icon @click.stop="toggleTasksDrawer"></v-app-bar-nav-icon>
 
 <!-- use v-slot here -->
     <v-menu offset-y origin="center center" :nudge-right="140" :nudge-bottom="10" transition="scale-transition">

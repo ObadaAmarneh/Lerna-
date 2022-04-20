@@ -58,7 +58,7 @@
 
                   <h1 default class="caption">
                     {{ limiter(item.notification_subject) }}
-                    {{item.is_unread}}
+                    
                    
                   </h1>
                   
