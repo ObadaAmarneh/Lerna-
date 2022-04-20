@@ -11,7 +11,7 @@
     
 
       <v-card>
-        <v-toolbar dark color="primary">
+        <v-toolbar dark color="create-color">
           <v-btn icon dark @click="dialog = false">
             <v-icon>mdi-close</v-icon>
           </v-btn>
@@ -335,5 +335,8 @@ export default {
 .v-btn--fab.v-size--small {
   height: 29px !important;
   width: 29px !important;
+}
+.create-color{
+  background-color: #009688!important;
 }
 </style>
