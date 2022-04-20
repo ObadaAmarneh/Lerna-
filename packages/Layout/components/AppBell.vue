@@ -8,7 +8,6 @@
     z-index="10"
   >
     <template v-slot:activator="{ on }">
-      <v-btn @click="testerrr()"> click me </v-btn>
       <v-btn icon text v-on="on" @click="restCounter">
         <v-badge
           :content="getNotificationCount"
@@ -160,9 +159,7 @@ export default {
 
   methods: {
     ...mapActions(["getNotifications", "setFormFlag"]),
-    testerrr() {
-      console.log("Hooon ", this.notifications);
-    },
+   
     limiter(notificationSubject) {
       if (notificationSubject.length > 20) {
         return (notificationSubject = notificationSubject.substring(0, 34));

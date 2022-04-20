@@ -1,17 +1,11 @@
 <template>
+
+
   <v-container fluid class="ma-0 pa-0">
       <v-parallax class="hero">
       <div class="hero-inner">
         <h1>OUR {{routeName}}</h1>
-        <h2>
-          <v-row class="justify-center">
-            <v-breadcrumbs :items="itemsBread" large>
-              <template v-slot:divider>
-                <v-icon>mdi-chevron-right</v-icon>
-              </template>
-            </v-breadcrumbs>
-          </v-row>
-        </h2>
+       
       </div>
     </v-parallax>
    
@@ -19,6 +13,7 @@
 </template>
 
 <script>
+//todo delte bread c
     export default {
         
   data() {
@@ -68,7 +63,7 @@
 .hero {
   /* Sizing */
   width: 100vw;
-  height: 400px !important;
+  height: 300px !important;
 
   /* Flexbox stuff */
   display: flex;

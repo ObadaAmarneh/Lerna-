@@ -2,19 +2,25 @@
   <div id="appRoot">
     <template>
       <v-app id="inspire" class="app">
-        <OurDoctors></OurDoctors>
+        <OurDoctors ></OurDoctors>
         <app-drawer class="app--drawer"></app-drawer>
         <TasksDrawer class="app--drawer"></TasksDrawer>
                 <app-toolbar class="app--toolbar"></app-toolbar>
-        <v-main class="mb-15">
-          <!-- Page Header -->
           <page-header></page-header>
+          <!-- style="padding: 60px 28px 34px 304px;   margin-bottom: 120px;
+" -->
+        <v-main >
+              <!-- Provides the application the proper gutter -->
+   <!-- Page Header -->
           <div class="page-wrapper">
             <nuxt />
           </div>
           <!-- App Footer -->
          
           <TheLayoutToTopFab></TheLayoutToTopFab>
+
+
+       
         </v-main>
                     <Footer></Footer>
         <!-- Go to top -->
@@ -115,9 +121,16 @@ export default {
 .page-wrapper .container {
   height: 100% !important;
   margin-bottom: 50px;
-  border: none
+  border: none;
+  padding: 150px;
 }
-
+//Todo spaces for the wrapper 
+.page-wrapper .container {
+    height: 100% !important;
+    margin-bottom: 50px;
+    border: none;
+    padding: 0px;
+}
 
 html {
   overflow-y: auto;

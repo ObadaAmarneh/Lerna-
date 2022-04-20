@@ -7,10 +7,10 @@
     v-model="drawer"
     width="260"
   >
-    <v-toolbar class="drawer-color" height="125%" dark>
+    <v-toolbar class="drawer-color" height="125%" style=" background-color: #009688!important;">
       <img  class= "logo" src="../static/Wish-Emblem.png" height="60" width="80" alt="Agents On Cloud" />
       <v-toolbar-title class="ml-0 pl-3">
-        <span class="hidden-sm-and-down">I Wish</span>
+        <span   class="hidden-sm-and-down logo-test">I Wish</span>
       </v-toolbar-title>
     </v-toolbar>
     <vue-perfect-scrollbar
@@ -179,7 +179,11 @@ export default {
   border-color: rgb(0, 255, 136);
 }
 .drawer-color {
-  background-color: #1976d2 !important;
+  background-color: #009688!important;
+
+}
+.logo-test{
+  color: white !important;
 }
 
 .v-navigation-drawer__content {

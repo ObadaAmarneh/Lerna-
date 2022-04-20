@@ -1,10 +1,10 @@
 <template>
   <v-app-bar
-    color="primary"
+    class="app-bar-color"
     fixed
     dark
     app
-    height="125px"
+    height="60px"
   >
 
     <v-toolbar-title class="ml-0 pl-3">
@@ -25,8 +25,7 @@
     <v-spacer></v-spacer>
     <v-btn icon @click="handleFullScreen()">
       <v-icon>mdi-fullscreen  </v-icon>
-    </v-btn>
-     <AppBell />
+    </v-btn>     <AppBell />
      <!-- move this to a component -->
          <v-btn icon @click="handleFullScreen()">
      <v-icon>mdi-calendar-check</v-icon>
@@ -127,3 +126,9 @@
     }
   };
 </script>
+<style scoped>
+.app-bar-color{
+  background-color: #009688!important;
+
+}
+</style>

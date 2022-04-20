@@ -15,7 +15,7 @@ import {reviews as performanceStore} from "../../performance.agentsoncloud.com/s
 import incident from "../../incidents.agentsoncloud.com/store/modules/incident";
 import impactedIssue from "../../incidents.agentsoncloud.com/store/modules/impactedIsssue";
 import attachment from "../../incidents.agentsoncloud.com/store/modules/attachment";
-import responder from "../../incidents.agentsoncloud.com/store/modules/responder";
+import responder from "../../incidents.agentsoncloud.com/store/modules/updates";
 import comment from "../../incidents.agentsoncloud.com/store/modules/comment";
 import creator from "../../incidents.agentsoncloud.com/store/modules/creator";
 import activityLog from "../../incidents.agentsoncloud.com/store/modules/activityLog";
