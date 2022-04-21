@@ -9,7 +9,7 @@
           <page-header></page-header>
           <!-- style="padding: 60px 28px 34px 304px;   margin-bottom: 120px;
 " -->
-        <v-main >
+        <v-main style ="padding: 0px 0px 0px;">
               <!-- Provides the application the proper gutter -->
    <!-- Page Header -->
           <div class="page-wrapper">
