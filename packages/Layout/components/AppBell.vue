@@ -34,11 +34,11 @@
       <v-divider />
       <!--<v-divider inset/>-->
       <!--<v-subheader inset>Files</v-subheader>-->
+              <v-btn @click="display">click</v-btn>
       <v-virtual-scroll :items="notifications" height="500" item-height="100">
         <template v-slot:default="{ item }" >
           <v-list>
             <v-list-item-group >
-              
               <v-list-item  height= "100" :key="item" avatar @click="1" min="0" max="4" class="unread">
   
                 <v-list-item-avatar class="mr-4">
@@ -159,7 +159,9 @@ export default {
 
   methods: {
     ...mapActions(["getNotifications", "setFormFlag"]),
-   
+   display(){
+console.log('All the notification have been',this.notifications);
+   },
     limiter(notificationSubject) {
       if (notificationSubject.length > 20) {
         return (notificationSubject = notificationSubject.substring(0, 34));
