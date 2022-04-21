@@ -34,7 +34,6 @@
       <v-divider />
       <!--<v-divider inset/>-->
       <!--<v-subheader inset>Files</v-subheader>-->
-              <v-btn @click="display">click</v-btn>
       <v-virtual-scroll :items="notifications" height="500" item-height="100">
         <template v-slot:default="{ item }" >
           <v-list>
