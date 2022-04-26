@@ -6,7 +6,7 @@
         <app-drawer class="app--drawer"></app-drawer>
         <TasksDrawer class="app--drawer"></TasksDrawer>
                 <app-toolbar class="app--toolbar"></app-toolbar>
-          <page-header></page-header>
+          <page-header v-if="routeName !='INDEX' "></page-header>
           <!-- style="padding: 60px 28px 34px 304px;   margin-bottom: 120px;
 " -->
         <v-main style ="padding: 0px 0px 0px;">
@@ -84,7 +84,7 @@ export default {
   },
   mounted() {
     console.log("Socket On");
-    const socket = io.connect("https://api.notifications.agentsoncloud.com/", {
+    const socket = io.connect("http://localhost:30192/", {
       cors: {
         origin: "*",
       },
@@ -106,6 +106,12 @@ export default {
       this.setSingleNotification(notification);
     });
   },
+  computed: {
+         routeName(){
+        let upper = $nuxt.$route.name.toUpperCase()
+          return  upper
+    }
+  }
 };
 </script>
 

@@ -1,122 +1,8 @@
 <template>
-  <v-navigation-drawer
-    id="tasksDrawer"
-    fixed
-    app
-    right 
-    v-model="drawer"
-    width="260"
-  >
-     <v-toolbar class="drawer-color" height="125%" dark>
-      <img  class= "logo" src="../static/Wish-Emblem.png" height="60" width="80" alt="Agents On Cloud" />
-      <v-toolbar-title class="ml-0 pl-3">
-        <span class="hidden-sm-and-down">I Wish</span>
-      </v-toolbar-title>
-    </v-toolbar>
-      <v-list dense expand>
-        <template v-for="(item, i) in menus">
-          <!--group with subitems-->
-          <v-list-group v-if="item.items" :key="item.name" :group="item.group" :prepend-icon="item.icon"
-                        no-action="no-action">
-            <v-list-item slot="activator" ripple="ripple">
-              <v-list-item-content>
-                <v-list-item-title>{{ item.title }}</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-            <template v-for="(subItem, i) in item.items">
-              <!--sub group-->
-              <v-list-group v-if="subItem.items" :key="subItem.name" :group="subItem.group" sub-group="sub-group">
-                <v-list-item slot="activator" ripple="ripple">
-                  <v-list-item-content>
-                    <v-list-item-title>{{ subItem.title }}</v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-                <v-list-item v-for="(grand, i) in subItem.children" :key="i" :to="grand.href? grand.href : null"
-                             ripple="ripple">
-                  <v-list-item-content>
-                    <v-list-item-title>{{ grand.title }}</v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-              </v-list-group>
-              <!--child item-->
-              <v-list-item v-else :key="i" :to="subItem.href? subItem.href : null"
-                           :disabled="subItem.disabled" :target="subItem.target" ripple="ripple">
-                <v-list-item-content>
-                  <v-list-item-title><span>{{ subItem.title }}</span></v-list-item-title>
-                </v-list-item-content>
-                <v-list-item-action v-if="subItem.action">
-                  <v-icon :class="[subItem.actionClass || 'success--text']">{{ subItem.action }}</v-icon>
-                </v-list-item-action>
-              </v-list-item>
-            </template>
-          </v-list-group>
-          <v-subheader v-else-if="item.header" :key="i">{{ item.header }}</v-subheader>
-          <v-divider v-else-if="item.divider" :key="i"></v-divider>
-          <!--top-level link-->
-          <v-list-item v-else :to="item.href ? item.href : null" ripple="ripple"
-                       :disabled="item.disabled" :target="item.target" rel="noopener" :key="item.name">
-            <v-list-item-action v-if="item.icon">
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item-content>
-            <v-list-item-action v-if="item.subAction">
-              <v-icon class="success--text">{{ item.subAction }}</v-icon>
-            </v-list-item-action>
-          </v-list-item>
-        </template>
-      </v-list>
-  </v-navigation-drawer>
+ 
 </template>
 <script>
-  import taskMenu from '../static/taskMenu';
-  export default {
-    name: 'app-drawer',
-    components: {
-   
-    },
-    props: {
-      expanded: {
-        type: Boolean,
-        default: true
-      },
-    },
-    data: () => ({
-      mini: false,
-      menus: taskMenu,
-      scrollSettings: {
-        maxScrollbarLength: 160
-      }
-    }),
-    computed: {
-      drawer: {
-        get() {
-          return this.$store.getters.tasksDrawer
-        },
-        set(val) {
-          this.$store.dispatch('tasksDrawer', val)
-        }
-      },
-      computeGroupActive() {
-        return true;
-      },
-      sideToolbarColor() {
-        return this.$vuetify.options.extra.sideNav;
-      }
-    },
-    methods: {
-      genChildTarget(item, subItem) {
-        if (subItem.href) return;
-        if (subItem.component) {
-          return {
-            name: subItem.component,
-          };
-        }
-        return {name: `${item.group}/${(subItem.name)}`};
-      },
-    }
-  };
+ 
 </script>
 
 
@@ -130,7 +16,5 @@
     
     }  */
 
-.drawer-color{
-background-color:#1976D2!important
-}
+
 </style>

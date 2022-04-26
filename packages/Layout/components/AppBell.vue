@@ -7,16 +7,17 @@
     class="mt-12"
     z-index="10"
   >
+
     <template v-slot:activator="{ on }">
       <v-btn icon text v-on="on" @click="restCounter">
         <v-badge
-          :content="getNotificationCount"
-          :value="getNotificationCount"
+          :content="count ==0 || !count ? '' : count "
+          :value="count ==0 ? '' : count "      
           color="red"
           overlap
         >
-          <v-icon v-if="!getNotificationCount">mdi-bell</v-icon>
-          <v-icon v-if="getNotificationCount">mdi-bell-ring</v-icon>
+          <v-icon v-if="count ==0 || !count">mdi-bell</v-icon>
+          <v-icon v-if="count>0">mdi-bell-ring</v-icon>
         </v-badge>
       </v-btn>
     </template>
@@ -28,7 +29,7 @@
           <Form></Form>
         </v-list-item-action>
           <v-icon class="cursor mr-2"  to="/notificationSettings" color="grey lighten-1"> mdi-wechat </v-icon>
-          <v-icon class="cursor"  to="/notificationSettings" color="grey lighten-1"> mdi-login-variant </v-icon>
+          <v-icon class="cursor"  @click="navigateTo" color="grey lighten-1"> mdi-login-variant </v-icon>
       </v-list-item>
       <v-spacer></v-spacer>
       <v-divider />
@@ -37,7 +38,7 @@
       <v-virtual-scroll :items="notifications" height="500" item-height="100">
         <template v-slot:default="{ item }" >
           <v-list>
-            <v-list-item-group >
+            <v-list-item-group>
               <v-list-item  height= "100" :key="item" avatar @click="1" min="0" max="4" class="unread">
   
                 <v-list-item-avatar class="mr-4">
@@ -57,7 +58,6 @@
 
                   <h1 default class="caption">
                     {{ limiter(item.notification_subject) }}
-                    
                    
                   </h1>
                   
@@ -128,6 +128,9 @@ export default {
   beforeMount() {
     // this.socket();
   },
+  updated(){
+
+  },
   computed: {
     // we can use here map getter and use the value form the store directly so we dont need to use each time this.store.getters  
 
@@ -143,9 +146,9 @@ export default {
     getDialog() {
       return this.$store.getters.getDialog;
     },
-    getNotificationCount() {
-      return this.$store.getters.getNumberOfNotification;
-    },
+    count(){
+ return this.$store.getters.getNumberOfNotification
+    }
   },
   components: {
     Ellipsis,
@@ -154,12 +157,16 @@ export default {
   },
   created() {
     this.getNotifications();
+   
   },
 
   methods: {
     ...mapActions(["getNotifications", "setFormFlag"]),
    display(){
 console.log('All the notification have been',this.notifications);
+   },
+   navigateTo(){
+this.$router.push("/  notificationSettings")
    },
     limiter(notificationSubject) {
       if (notificationSubject.length > 20) {
@@ -172,7 +179,7 @@ console.log('All the notification have been',this.notifications);
       console.log('force update');
       this.$forceUpdate();
       this.$store.commit("updateNotificationCounter");
-      this.getNotificationCount;
+      localStorage.removeItem('notificationCounter');
     },
     notificationDate(date) {
       return moment(date).fromNow();
@@ -191,6 +198,7 @@ console.log('All the notification have been',this.notifications);
       this.$store.dispatch("changeNotificationStatus" , notificationDetails.id)
       this.$store.dispatch("getNotificationDetails", notificationDetails);
       this.$router.push({ path: "Details" });
+      localStorage.removeItem('notificationCounter');
     },
     toggleDots(notificationDetails) {
       console.log(

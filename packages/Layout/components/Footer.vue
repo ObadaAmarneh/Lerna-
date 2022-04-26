@@ -3,6 +3,7 @@
     dark
     padless
     height ="1px"
+    
   >
     <v-card
       flat
@@ -23,10 +24,6 @@
           </v-icon>
         </v-btn>
       </v-card-text>
-
-
-      
-
       <!-- <v-card-text class="white--text pt-0">
        Agents On Cloud ' started this year, our company's mission, background,products,are growing up, we  manage to pull off all what you need at Agents on Cloud
        "Always deliver more than expected".~ 
@@ -70,7 +67,6 @@
 <style lang="scss" scoped>
 .footer-color {
   background-color: #009688!important;
-
 }
 .app--footer {
   position: fixed !important;
