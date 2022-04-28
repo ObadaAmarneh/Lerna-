@@ -8,7 +8,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: "I Wish",
+    title: "Laser Avenue",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -16,7 +16,7 @@ module.exports = {
         hid: "description",
         name: "description",
         content:
-          "I wish system \n" +
+          "Laser Avenue system \n" +
           "  Designed and developed by Agents on Cloud Team =) .",
       },
     ],
@@ -170,7 +170,7 @@ module.exports = {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: "#3adced" },
+  loading: { color: "#009688" },
 
   /*
    ** Global CSS

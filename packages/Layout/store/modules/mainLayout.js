@@ -5,7 +5,7 @@ export const sortByDateKey = (notifications, key) =>
 const Layout = {
   namespace: true,
   state: {
-    drawer: true,
+    drawer: false,
     tasksDrawer: false,
     notifications:[],
     selectedNotification:[]

@@ -1,66 +1,84 @@
 <template>
   <div id="pageDashboard">
-    <v-container grid-list-xl fluid class="mt-14">
+    <v-container grid-list-xl fluid>
       <v-layout row wrap>
         <!-- mini statistic start -->
-        <v-flex lg3 sm6 xs12>
-          <v-card class="doctor-card ml-14" dark elevation="2" outlined tile>
-            <v-card-actions>
-              <v-card-title class="text-h5"> Total Doctors </v-card-title>
-              <v-spacer></v-spacer>
-              <v-card-title class="text-h5"> 45 </v-card-title>
-            </v-card-actions>
-            <v-card-subtitle class="ml-3">Total Patient: 5735.</v-card-subtitle>
+        <v-flex lg4 sm7 xs12>
+          <mini-statistic
+            title="Registered Patient"
+            sub-title="Today:"
+            sub="Yesterday:"
+            text = "Total Patient: 5743"
 
-            <v-card-actions>
-              <v-card-subtitle> Medical Officers: 0 </v-card-subtitle>
-              <v-spacer> </v-spacer>
-              <v-card-subtitle> Anaesthetists: 0 </v-card-subtitle>
-            </v-card-actions>
-          </v-card>
+          >
+          </mini-statistic>
         </v-flex>
-        <v-flex lg4  sm6 xs12>
-          <v-card     max-width="400"
-     class="  doctor-card" color="#385F73" elevation="2" outlined tile dark>
-            <v-card-actions>
-              <v-card-title class="text-h5"> Registered Patient </v-card-title>
-              <v-spacer></v-spacer>
-              <v-card-title class="text-h5"> 45 </v-card-title>
-            </v-card-actions>
-            <v-card-subtitle class="ml-3">Total Patient: 5735.</v-card-subtitle>
-            <v-card-actions>
-              <v-card-subtitle> Today : 0 </v-card-subtitle>
-              <v-spacer></v-spacer>
-              <v-card-subtitle> Yesterday </v-card-subtitle>
-            </v-card-actions>
-          </v-card>
-        </v-flex>
-      <v-flex lg3 sm6 xs12>
-          <v-card class="doctor-card" dark elevation="2" outlined tile>
-            <v-card-actions>
-              <v-card-title class="text-h5"> Total Doctors </v-card-title>
-              <v-spacer></v-spacer>
-              <v-card-title class="text-h5"> 45 </v-card-title>
-            </v-card-actions>
-            <v-card-subtitle class="ml-3">Total Patient: 5735.</v-card-subtitle>
+        <v-flex lg4 sm7 xs12>
+          <mini-statistic
+            title="Total Doctors"
+            sub-title="Medical Officers:"
+            sub="Anaesthetists:"
+            text = "Consultants : 45"
 
-            <v-card-actions>
-              <v-card-subtitle> Medical Officers: 0 </v-card-subtitle>
-              <v-spacer> </v-spacer>
-              <v-card-subtitle> Anaesthetists: 0 </v-card-subtitle>
-            </v-card-actions>
-          </v-card>
+          >
+          </mini-statistic>
         </v-flex>
-      </v-layout>
-    </v-container>
+        <v-flex lg4 sm7 xs12>
+          <mini-statistic
+            title="Today's Appointments"
+            sub-title="Cancelled:"
+            sub="Returned:"
+            text = "New : 1 Follow up : 0 Referrals : 0"
+          >
+          </mini-statistic>
+        </v-flex>
+     <v-flex  class="d-flex align-end flex-column">
+          <linear-statistic
+            title="Sales"
+            sub-title="Sales increase"
+            icon="trending_up"
+            color="success"
+            :value="15"
+          >
+          </linear-statistic>
+          <linear-statistic class="my-4"
+                            title="Appointment"
+                            sub-title=" Appointment Increase"
+                            icon="trending_up"
+                            color="pink"
+                            :value="30"
+          >
+          </linear-statistic>
+          <linear-statistic class="my-4"
+                            title="Revenue"
+                            sub-title="Revenue increase"
+                            icon="trending_up"
+                            color="primary"
+                            :value="50"
+          >
+          </linear-statistic>
+          <linear-statistic class="mt-4"
+                            title="Cost"
+                            sub-title="Cost reduce"
+                            icon="trending_down"
+                            color="orange"
+                            :value="25"
+          >
+          </linear-statistic>
+        </v-flex>
+        </v-layout>
+        </v-container>
   </div>
 </template>
 <script>
 import MiniStatistic from "@/components/widgets/statistic/MiniStatistic";
+import LinearStatistic from '@/components/widgets/statistic/LinearStatistic';
+
 export default {
   layout: "dashboard",
   components: {
     MiniStatistic,
+    LinearStatistic
   },
   data: () => ({
     items: [
@@ -86,5 +104,8 @@ export default {
 }
 .registered-card {
   background-image: linear-gradient(-20deg, #19a2ff 0%, #0773bc 100%);
+}
+.container.grid-list-xl .layout .flex {
+    padding: 109px;
 }
 </style>

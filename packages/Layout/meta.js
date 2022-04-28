@@ -9,7 +9,7 @@ module.exports = {
         name: {
             'type': 'string',
             'required': true,
-            'message': 'I Wish'
+            'message': 'Laser Avenue'
         },
         description: {
             'type': 'string',

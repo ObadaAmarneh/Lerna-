@@ -1,4 +1,4 @@
-# I Wish system
+# Laser Avenue system
 
 # Nuxt Material Admin
 

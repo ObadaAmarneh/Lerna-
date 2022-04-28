@@ -6,11 +6,12 @@
     app
     height="60px"
   >
-
     <v-toolbar-title class="ml-0 pl-3">
       <v-app-bar-nav-icon @click.stop="toggleDrawer()"></v-app-bar-nav-icon>
        
     </v-toolbar-title>
+<v-spacer></v-spacer>
+<v-toolbar-title v-if="routeName != 'INDEX'" class="white--text ml-15">{{routeName}}</v-toolbar-title>
 <!-- this is search  -->
 <!-- 
     <v-text-field
@@ -22,10 +23,11 @@
       dense
     >
     </v-text-field> -->
+    
     <v-spacer></v-spacer>
            <v-btn icon @click="handleFullScreen()">
      <v-icon>mdi-calendar-check</v-icon>
- 
+
     </v-btn>
           <v-btn icon @click="handleFullScreen()">
        <v-icon>mdi-calendar-text</v-icon>
@@ -110,6 +112,10 @@
               getNotificationCount() {
       return this.$store.getters.getNumberOfNotification;
     },
+    routeName(){
+        let upper = $nuxt.$route.name.toUpperCase()
+          return  upper
+    }
     },
     methods: {
       toggleDrawer() {

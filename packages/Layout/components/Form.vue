@@ -3,7 +3,8 @@
     <v-dialog v-model="dialog" persistent max-width="1000px">
       <template v-slot:activator="{ on, attrs }">
        
-          <v-icon      v-bind="attrs"
+          <v-icon 
+          v-bind="attrs"
           v-on="on"
           class="mr-4"
           @click="clear" color="grey lighten-1" dense> mdi-bell-plus </v-icon>
@@ -19,17 +20,17 @@
           <v-spacer></v-spacer>
           <v-toolbar-items>
             <v-btn dark text @click="clear"> Clear </v-btn>
-            <v-btn dark text @click="submit"> Send </v-btn>
+            <v-btn dark text @click="submit" > Send </v-btn>
           </v-toolbar-items>
         </v-toolbar>
         <form>
           <v-container fluid>
-            <v-icon>mdi-bell-plus
+            <v-icon class="mb-2">mdi-bell-plus
             </v-icon>
-            <h1>Create a new notification</h1>
+            <h1  class="mb-2" >Create a new notification</h1>
 
             <v-row class="mb-6" no-gutters>
-              <v-col sm="5" offset-sm="2" md="6" offset-md="0" width="50%">
+              <v-col sm="5" offset-sm="2" md="6" offset-md="0" width="50%" class="mr-4">
                 <v-text-field
                   dense
                   v-model="notificationSubject"
@@ -46,7 +47,7 @@
                 <Channel @selectedChannel="selectedChannelValue"></Channel>
               </v-col>
 
-              <v-col sm="5" offset-sm="3" md="6" offset-md="0">
+              <v-col sm="5" offset-sm="3" md="6" offset-md="0" class="mr-4">
                 <v-file-input
                   label="Upload image"
                   filled
@@ -57,15 +58,39 @@
                 ></v-file-input>
               </v-col>
 
-              <v-col sm="6" offset-sm="2" md="6" offset-md="0">
+              <v-col sm="6" offset-sm="2" md="6" offset-md="0" class="mr-4">
                 <Recipients
                   @selectedRecipients="selectedRecipientsValue"
                 ></Recipients>
               </v-col>
+         
+
+              <!-- CALENDER HERE -->
+
+           
               <v-col sm="6" offset-sm="2" md="6" offset-md="0">
+                <v-radio-group v-model="selectedType" row>
+                  <template v-slot:label>
+                    <div>Select <strong>Notification type</strong></div>
+                  </template>
+                  <v-radio label="Instant" value="Instant">
+                    <template v-slot:label>
+                      <strong class="success--text">Instant</strong>
+                    </template>
+                  </v-radio>
+                  <v-radio label="Schedular" value="Schedular">
+                    <template v-slot:label>
+                      <strong class="success--text">Schedular</strong>
+                    </template>
+                  </v-radio>
+                </v-radio-group>
+                     <v-col sm="6" offset-sm="2" md="10" offset-md="0">
                 <div v-if="selectedType === 'Schedular'">
-                  <v-card>
-                    <v-banner shaped icon="mdi-calendar-today"
+                  <v-card  elevation="2"
+  outlined width="344px">
+                    <v-banner shaped    
+  outlined
+   icon="mdi-calendar-today"
                       >From
                       <datetime
                         type="datetime"
@@ -119,26 +144,6 @@
                   </v-card>
                 </div>
               </v-col>
-
-              <!-- CALENDER HERE -->
-
-              <v-col sm="6" offset-sm="2" md="6" offset-md="0"> </v-col>
-              <v-col sm="6" offset-sm="2" md="6" offset-md="0">
-                <v-radio-group v-model="selectedType" row>
-                  <template v-slot:label>
-                    <div>Select <strong>Notification type</strong></div>
-                  </template>
-                  <v-radio label="Instant" value="Instant">
-                    <template v-slot:label>
-                      <strong class="success--text">Instant</strong>
-                    </template>
-                  </v-radio>
-                  <v-radio label="Schedular" value="Schedular">
-                    <template v-slot:label>
-                      <strong class="success--text">Schedular</strong>
-                    </template>
-                  </v-radio>
-                </v-radio-group>
                 <v-radio-group v-model="selectedStatus" row>
                   <template v-slot:label>
                     <div>Select <strong>Notification status</strong></div>
@@ -155,6 +160,7 @@
                   </v-radio>
                 </v-radio-group>
               </v-col>
+
             </v-row>
             <v-textarea
               counter

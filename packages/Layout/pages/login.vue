@@ -9,7 +9,7 @@
               <v-card-text>
                 <div class="layout column align-center">
                   <img src="../static/Wish-Emblem.png" alt="Vue Material Admin" width="180" height="120">
-                  <h1 class="flex my-4 primary--text">I wish</h1>
+                  <h1 class="flex my-4 primary--text">Laser Avenue</h1>
                 </div>
                 <v-form>
                   <v-text-field append-icon="person" name="login" label="Login" type="text"

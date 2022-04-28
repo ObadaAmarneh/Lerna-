@@ -51,7 +51,6 @@
                     />
                   </v-avatar>
                 </v-list-item-avatar>
-     
                 <v-list-item-content
                   @click.prevent.stop="notificationContent(item)"
                 >

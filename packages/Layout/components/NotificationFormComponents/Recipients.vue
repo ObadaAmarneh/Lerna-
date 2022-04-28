@@ -11,9 +11,10 @@
       @change="OnClickRecipients(selectedRecipients)"
     >
       <template #selection="{ item ,index  }">
-        <v-chip v-if="index == 1 || index == 0 " class="ma-2 sm" close  small-chips color="green" text-color="white" @click:close="selectedRecipients.splice(selectedRecipients.indexOf(item), 1);">
-         <v-avatar left>
-              <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
+        <v-chip v-if="index == 1 || index == 0 " class="ma-2 sm chips-color " close   small  text-color="white" @click:close="selectedRecipients.splice(selectedRecipients.indexOf(item), 1);">
+         <v-avatar size="10"
+ left>
+              <v-img   height="30" src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
             </v-avatar> 
           {{item }}
         </v-chip>
@@ -73,4 +74,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.chips-color{
+background-color: #009688!important;
+}
+</style>

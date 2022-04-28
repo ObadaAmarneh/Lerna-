@@ -4,7 +4,7 @@
   <v-container fluid class="ma-0 pa-0">
       <v-parallax class="hero">
       <div class="hero-inner">
-        <h1>OUR {{routeName}}</h1>
+     
        
       </div>
     </v-parallax>

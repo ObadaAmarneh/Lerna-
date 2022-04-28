@@ -10,7 +10,7 @@
     <v-toolbar class="drawer-color" height="125%" style=" background-color: #009688!important;">
       <img  class= "logo" src="../static/Wish-Emblem.png" height="60" width="80" alt="Agents On Cloud" />
       <v-toolbar-title class="ml-0 pl-3">
-        <span   class="hidden-sm-and-down logo-test">I Wish</span>
+        <span   class="hidden-sm-and-down logo-test">Laser Avenue</span>
       </v-toolbar-title>
     </v-toolbar>
     <vue-perfect-scrollbar
@@ -30,6 +30,7 @@
             <v-list-item slot="activator" ripple="ripple">
               <v-list-item-content>
                 <v-list-item-title>{{ item.title }}</v-list-item-title>
+              
               </v-list-item-content>
             </v-list-item>
             <template v-for="(subItem, i) in item.items">
@@ -95,7 +96,7 @@
             ripple="ripple"
             :disabled="item.disabled"
             @click="drawer = false"
-
+    
             :target="item.target"
             rel="noopener"
             :key="item.name"
@@ -104,11 +105,15 @@
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
+              <v-list-item-title       @mouseover="showMenuTool(item)"
+          @mouseleave="showMenu = false">{{ item.title }}</v-list-item-title>
+                <v-list-item-title>{{ showMenu }}</v-list-item-title>
+          
             </v-list-item-content>
             <v-list-item-action v-if="item.subAction">
               <v-icon class="success--text">{{ item.subAction }}</v-icon>
             </v-list-item-action>
+            <Tooltip :showMenu= showMenu  :showMenuTool= showMenuTool></Tooltip>
           </v-list-item>
         </template>
       </v-list>
@@ -119,12 +124,14 @@
 </template>
 <script>
 import menu from "../static/menu";
+import Tooltip from './drawer/tooltip.vue'
 import VuePerfectScrollbar from "vue-perfect-scrollbar";
 
 export default {
   name: "app-drawer",
   components: {
     VuePerfectScrollbar,
+    Tooltip
   },
   props: {
     expanded: {
@@ -135,6 +142,7 @@ export default {
   data: () => ({
     mini: false,
     menus: menu,
+    showMenu: false,
     scrollSettings: {
       maxScrollbarLength: 160,
     },
@@ -165,7 +173,13 @@ export default {
       }
       return { name: `${item.group}/${subItem.name}` };
     },
+    showMenuTool(item){
+      this.showMenu= true
+      console.log('>>>>>', item.title);
+      return item
+  }
   },
+  
 };
 </script>
 
